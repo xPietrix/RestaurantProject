@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">AndroidBackend</string>
+    <string name="addButton">Add User</string>
+    <string name="textViewUsername">Username</string>
+    <string name="editTextUsername"></string>
+    <string name="textViewPassword">Password</string>
+    <string name="editTextPassword"></string>
+    <string name="buttonAddUser">Add User</string>
+    <string name="textViewUsernameLogging">Username</string>
+    <string name="editTextUsernameLogging"></string>
+    <string name="textViewPasswordLogging">Password</string>
+    <string name="editTextPasswordLogging"></string>
+    <string name="loginButton">Log In</string>
+    <string name="textViewAddingUser">ADDING USER</string>
+    <string name="textViewLogging">LOGGING</string>
+    <string name="tvAddingDishCategory">ADDING DISH CATEGORY</string>
+    <string name="tvDishCategoryId">Dish category id</string>
+    <string name="eTDishCategoryId"></string>
+    <string name="tvDishCategoryName">Dish category name</string>
+    <string name="eTDishCategoryName"></string>
+    <string name="buttonAddDishCategory">Add dish category</string>
+    <string name="addDishCategoryButton">Add Dish Category</string>
+    <string name="tVGetDishCategories">GET ALL DISH CATEGORIES</string>
+    <string name="tVCategoriesList"></string>
+    <string name="getDishCategories">Get Dish Categories</string>
+    <string name="getDishCategoriesButtonText">Button</string>
+    <string name="textViewRole">Role</string>
+</resources>

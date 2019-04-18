@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".activities.AddUserActivity">
+
+    <TextView
+        android:id="@+id/textViewAddingDishCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvAddingDishCategory"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewDishCategoryId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvDishCategoryId" />
+
+    <EditText
+        android:id="@+id/editTextDishCategoryId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:text="@string/eTDishCategoryId" />
+
+    <TextView
+        android:id="@+id/textViewDishCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvDishCategoryName" />
+
+    <EditText
+        android:id="@+id/editTextDishCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/eTDishCategoryName" />
+
+    <Button
+        android:id="@+id/buttonAddDishCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonAddDishCategory" />
+
+</LinearLayout>

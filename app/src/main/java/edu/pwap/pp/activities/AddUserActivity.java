@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.view.View.OnClickListener;
 
 import edu.pwap.pp.R;
 import edu.pwap.pp.models.User;
@@ -31,7 +32,6 @@ public class AddUserActivity extends AppCompatActivity
     private Button addButton;
     private Spinner roleSpinner;
     private RoleSelectedListener listener;
-    private String selectedRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,12 +46,13 @@ public class AddUserActivity extends AppCompatActivity
         passwordText = findViewById(R.id.editTextPassword);
         addButton = findViewById(R.id.buttonAddUser);
         roleTextView = findViewById(R.id.textViewRole);
+        roleSpinner = findViewById(R.id.roleSpinner);
+
         listener = new RoleSelectedListener();
 
         addItemsOnSpinner();
-        selectedRole = listener.getSelectedRole();
-        setAddButtonListener(selectedRole);
-
+        setAddButtonListener();
+        addListenerOnSpinnerItemSelection();
     }
 
     public void addUser(String role, User user)
@@ -60,43 +61,36 @@ public class AddUserActivity extends AppCompatActivity
         userService.addUser(role, user);
     }
 
-    public void addItemsOnSpinner() {
-
-        roleSpinner = (Spinner) findViewById(R.id.roleSpinner);
+    public void addItemsOnSpinner()
+    {
         List<String> list = new ArrayList<String>();
         list.add("admin");
         list.add("waiter");
         list.add("chef");
         list.add("dietican");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(dataAdapter);
     }
 
-    public String getSelectedRole()
+    public void addListenerOnSpinnerItemSelection()
     {
-        String selectedRole = "";
-        roleSpinner = findViewById(R.id.roleSpinner);
-        RoleSelectedListener listener = new RoleSelectedListener();
         roleSpinner.setOnItemSelectedListener(listener);
-        selectedRole = listener.getSelectedRole();
-
-        return selectedRole;
     }
 
-    public void setAddButtonListener(final String selectedRole)
+    public void setAddButtonListener()
     {
-        addButton.setOnClickListener(new View.OnClickListener()
+        addButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 String username = userNameText.getText().toString();
                 String password = passwordText.getText().toString();
+                String selectedRole = listener.getSelectedRole();
                 User userToAdd = new User(username, password);
-                String role = selectedRole;
-                addUser(role, userToAdd);
+                addUser(selectedRole, userToAdd);
             }
         });
     }

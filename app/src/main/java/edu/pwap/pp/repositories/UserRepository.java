@@ -16,14 +16,14 @@ public class UserRepository
 
     public void addUser(String role, User user)
     {
-        Call<User> call = connectionInitializer.addUser(role, user);
+        Call<User> call = connectionInitializer.getAddUserCall(role, user);
         Callback<User> addDataCallback = connectionInitializer.setUserCallback();
         call.enqueue(addDataCallback);
     }
 
     public void login(User user)
     {
-        Call<User> call = connectionInitializer.login(user);
+        Call<User> call = connectionInitializer.getLoginCall(user);
         Callback<User> loginCallback = connectionInitializer.setUserCallback();
         call.enqueue(loginCallback);
     }

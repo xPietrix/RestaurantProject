@@ -12,7 +12,8 @@ public class RoleSelectedListener implements OnItemSelectedListener
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
     {
-        selectedRole = parent.getItemAtPosition(position).toString();
+        this.selectedRole = parent.getItemAtPosition(position).toString();
+        System.out.println("XDDD: " + this.selectedRole);
         Toast.makeText(parent.getContext(),"Selected role: " + parent.getItemAtPosition(position).toString(),
                 Toast.LENGTH_SHORT).show();
     }

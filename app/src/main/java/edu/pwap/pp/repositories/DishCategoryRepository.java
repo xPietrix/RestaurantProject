@@ -24,7 +24,7 @@ public class DishCategoryRepository
         Call<List<DishCategory>> call = connectionInitializer.getDishCategories();
         Callback<List<DishCategory>> dishCategoriesCallback = connectionInitializer.setGetDishCategoriesCallback();
         call.enqueue(dishCategoriesCallback);
-        content = connectionInitializer.getContent();
+        //content = connectionInitializer.getContent();
         return content;
     }
 
@@ -35,8 +35,8 @@ public class DishCategoryRepository
 
     public void addDishCategory(DishCategory dishCategory)
     {
-        Call<DishCategory> call = connectionInitializer.addDishCategory(dishCategory);
-        Callback<DishCategory> loginCallback = connectionInitializer.setAddDishCategoryCallback();
-        call.enqueue(loginCallback);
+        Call<DishCategory> call = connectionInitializer.getAddDishCategoryCall(dishCategory);
+        Callback<DishCategory> dishCategoryCallback = connectionInitializer.setAddDishCategoryCallback();
+        call.enqueue(dishCategoryCallback);
     }
 }

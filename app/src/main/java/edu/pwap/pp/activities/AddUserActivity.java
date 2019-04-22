@@ -30,6 +30,8 @@ public class AddUserActivity extends AppCompatActivity
     private EditText passwordText;
     private Button addButton;
     private Spinner roleSpinner;
+    private RoleSelectedListener listener;
+    private String selectedRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,10 +46,12 @@ public class AddUserActivity extends AppCompatActivity
         passwordText = findViewById(R.id.editTextPassword);
         addButton = findViewById(R.id.buttonAddUser);
         roleTextView = findViewById(R.id.textViewRole);
+        listener = new RoleSelectedListener();
 
         addItemsOnSpinner();
-        setAddButtonListener();
-        addListenerOnSpinnerItemSelection();
+        selectedRole = listener.getSelectedRole();
+        setAddButtonListener(selectedRole);
+
     }
 
     public void addUser(String role, User user)
@@ -70,27 +74,18 @@ public class AddUserActivity extends AppCompatActivity
         roleSpinner.setAdapter(dataAdapter);
     }
 
-    public void addListenerOnSpinnerItemSelection()
+    public String getSelectedRole()
     {
+        String selectedRole = "";
         roleSpinner = findViewById(R.id.roleSpinner);
-        roleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                Toast.makeText(parent.getContext(),"Selected role: " + parent.getItemAtPosition(position).toString(),
-                               Toast.LENGTH_SHORT).show();
-            }
+        RoleSelectedListener listener = new RoleSelectedListener();
+        roleSpinner.setOnItemSelectedListener(listener);
+        selectedRole = listener.getSelectedRole();
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
-            }
-        });
+        return selectedRole;
     }
 
-    public void setAddButtonListener()
+    public void setAddButtonListener(final String selectedRole)
     {
         addButton.setOnClickListener(new View.OnClickListener()
         {
@@ -100,7 +95,7 @@ public class AddUserActivity extends AppCompatActivity
                 String username = userNameText.getText().toString();
                 String password = passwordText.getText().toString();
                 User userToAdd = new User(username, password);
-                String role = "admin";
+                String role = selectedRole;
                 addUser(role, userToAdd);
             }
         });

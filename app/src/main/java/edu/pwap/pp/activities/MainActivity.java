@@ -463,21 +463,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void showNoResponseError(Response<User> response)
-    {
-        Toast.makeText(MainActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showOnFailureError(Throwable t)
-    {
-        Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showSuccessfulCall()
-    {
-        Toast.makeText(MainActivity.this, "Successful call", Toast.LENGTH_SHORT).show();
-    }
-
     public void openAddUserActivity()
     {
         Intent intent = new Intent(this, AddUserActivity.class);
@@ -499,6 +484,12 @@ public class MainActivity extends AppCompatActivity
     public void openGetDishCategoriesActivity()
     {
         Intent intent = new Intent(this, GetDishCategoriesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openErrorActivity()
+    {
+        Intent intent = new Intent(this, ConnectionErrorActivity.class);
         startActivity(intent);
     }
 }

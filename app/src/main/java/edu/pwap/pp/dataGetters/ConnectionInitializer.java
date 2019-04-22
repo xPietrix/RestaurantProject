@@ -1,5 +1,6 @@
 package edu.pwap.pp.dataGetters;
 
+import java.io.IOException;
 import java.util.List;
 
 import edu.pwap.pp.activities.AddDishCategoryActivity;
@@ -7,6 +8,7 @@ import edu.pwap.pp.activities.AddUserActivity;
 import edu.pwap.pp.activities.GetDishCategoriesActivity;
 import edu.pwap.pp.models.DishCategory;
 import edu.pwap.pp.models.User;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,36 +23,13 @@ public class ConnectionInitializer
                                 /* HOME ADDRESS */
         this.getEverything = new GetEverything("http:/192.168.1.101:8080/");
 
-                            /* UNIVERSITY ADDRESS */
+                             /* UNIVERSITY ADDRESS */
         //this.getEverything = new GetEverything("http:/192.168.43.79:8080/");
     }
 
     public Callback<User> setUserCallback()
     {
-        Callback<User> callback = new Callback<User>()
-        {
-            AddUserActivity aua = new AddUserActivity();
-            @Override
-            public void onResponse(Call<User> call, Response<User> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    aua.showNoResponseError(response);
-                    return;
-                }
-                else
-                {
-                    aua.showSuccessfulCall();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t)
-            {
-                aua.showOnFailureError(t);
-            }
-        };
-
+        Callback<User> callback = new CustomCallback();
         return callback;
     }
 

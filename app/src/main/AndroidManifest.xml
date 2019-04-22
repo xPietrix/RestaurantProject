@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.GetDishCategoriesActivity"></activity>
+        <activity android:name=".activities.ConnectionErrorActivity"></activity>
+        <activity android:name=".activities.GetDishCategoriesActivity" />
         <activity android:name=".activities.AddDishCategoryActivity" />
         <activity android:name=".activities.LoggingActivity" />
         <activity android:name=".activities.AddUserActivity" />

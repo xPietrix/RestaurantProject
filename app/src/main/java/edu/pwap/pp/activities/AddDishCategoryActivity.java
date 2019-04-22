@@ -38,17 +38,7 @@ public class AddDishCategoryActivity extends AppCompatActivity
         nameText = findViewById(R.id.editTextDishCategoryName);
         addButton = findViewById(R.id.buttonAddDishCategory);
 
-        addButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                long id = idText.getId();
-                String name = nameText.getText().toString();
-                DishCategory dishCategory = new DishCategory(id, name);
-                addDishCategory(dishCategory);
-            }
-        });
+        setAddButtonListener();
     }
 
     public void addDishCategory(DishCategory dishCategory)
@@ -71,5 +61,20 @@ public class AddDishCategoryActivity extends AppCompatActivity
     public void showSuccessfulCall()
     {
         Toast.makeText(AddDishCategoryActivity.this, "Successful call", Toast.LENGTH_SHORT).show();
+    }
+
+    public void setAddButtonListener()
+    {
+        addButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                long id = idText.getId();
+                String name = nameText.getText().toString();
+                DishCategory dishCategory = new DishCategory(id, name);
+                addDishCategory(dishCategory);
+            }
+        });
     }
 }

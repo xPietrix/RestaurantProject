@@ -15,9 +15,9 @@ public class DishCategory
         return categoryName;
     }
 
-    public DishCategory(long id, String categoryName)
+    public DishCategory(String categoryName)
     {
-        this.id = id;
+        this.id = 0;
         this.categoryName = categoryName;
     }
 }

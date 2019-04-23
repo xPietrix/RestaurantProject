@@ -5,47 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.AdminViewActitivity">
 
     <TextView
-        android:id="@+id/text_view_result"
+        android:id="@+id/adminTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/adminViewText"
         android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
-        android:id="@+id/adminButton"
+        android:id="@+id/buttonAddUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/adminButton" />
-
-    <!--
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/loginButton" />
-
-    <Button
-        android:id="@+id/addDishCategoryButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/addDishCategoryButton" />
-
-    <Button
-        android:id="@+id/getDishCategoriesButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/getDishCategories" />
-
-    -->
+        android:text="@string/addButton" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

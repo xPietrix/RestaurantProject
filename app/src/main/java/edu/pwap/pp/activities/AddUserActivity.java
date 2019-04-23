@@ -3,7 +3,6 @@ package edu.pwap.pp.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +18,6 @@ import edu.pwap.pp.R;
 import edu.pwap.pp.models.User;
 import edu.pwap.pp.repositories.UserRepository;
 import edu.pwap.pp.services.UserService;
-import retrofit2.Response;
 
 public class AddUserActivity extends AppCompatActivity
 {
@@ -91,22 +89,10 @@ public class AddUserActivity extends AppCompatActivity
                 String selectedRole = listener.getSelectedRole();
                 User userToAdd = new User(username, password);
                 addUser(selectedRole, userToAdd);
+                Toast.makeText(v.getContext(),"User added to database", Toast.LENGTH_SHORT).show();
+                userNameText.setText("");
+                passwordText.setText("");
             }
         });
-    }
-
-    public void showNoResponseError(Response<User> response)
-    {
-        Toast.makeText(AddUserActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showOnFailureError(Throwable t)
-    {
-        Toast.makeText(AddUserActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showSuccessfulCall()
-    {
-        Toast.makeText(AddUserActivity.this, "Successful call", Toast.LENGTH_SHORT).show();
     }
 }

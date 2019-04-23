@@ -13,7 +13,6 @@ public class RoleSelectedListener implements OnItemSelectedListener
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
     {
         this.selectedRole = parent.getItemAtPosition(position).toString();
-        System.out.println("XDDD: " + this.selectedRole);
         Toast.makeText(parent.getContext(),"Selected role: " + parent.getItemAtPosition(position).toString(),
                 Toast.LENGTH_SHORT).show();
     }

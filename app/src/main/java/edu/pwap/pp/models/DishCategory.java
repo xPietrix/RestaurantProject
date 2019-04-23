@@ -15,9 +15,20 @@ public class DishCategory
         return categoryName;
     }
 
+    public void setId(long id)
+    {
+        this.id = id;
+    }
+
     public DishCategory(String categoryName)
     {
         this.id = 0;
+        this.categoryName = categoryName;
+    }
+
+    public DishCategory(long id, String categoryName)
+    {
+        this.id = id;
         this.categoryName = categoryName;
     }
 }

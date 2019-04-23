@@ -16,8 +16,8 @@
     <string name="tvAddingDishCategory">ADDING DISH CATEGORY</string>
     <string name="tvDishCategoryName">Dish category name</string>
     <string name="eTDishCategoryName"></string>
-    <string name="buttonAddDishCategory">Add dish category</string>
-    <string name="addDishCategoryButton">Add Dish Category</string>
+    <string name="buttonAddDishCategory">Add new dish category</string>
+    <string name="addDishCategoryButton">Add new dish category</string>
     <string name="tVGetDishCategories">GET ALL DISH CATEGORIES</string>
     <string name="tVCategoriesList"></string>
     <string name="getDishCategories">Get Dish Categories</string>
@@ -25,4 +25,23 @@
     <string name="textViewRole">Role</string>
     <string name="adminButton">ADMIN</string>
     <string name="adminViewText">ADMIN VIEW</string>
+    <string name="dieticianButton">DIETICIAN</string>
+    <string name="addNewDishText">ADD NEW DISH</string>
+    <string name="addingNewDishText">ADDING NEW DISH</string>
+    <string name="showAllDishesText">SHOW ALL DISHES</string>
+    <string name="showAllDishCategoriesText">SHOW ALL DISH CATEGORIES</string>
+    <string name="getAllDishCategoriesText">ALL DISH CATEGORIES</string>
+    <string name="getAllDishesText">ALL DISHES</string>
+    <string name="dishNameTextView">Dish name</string>
+    <string name="eTDishName" />
+    <string name="addDishButtonText">ADD DISH</string>
+    <string name="addDishToDBText">ADD DISH</string>
+    <string name="dieticianViewText">DIETICIAN VIEW</string>
+    <string name="dishPriceTV">Price</string>
+    <string name="eTDishPrice" />
+    <string name="eTEstimatedPrepTime" />
+    <string name="tVEstimatedPrepTime">Estimate preparation time</string>
+    <string name="tVDishCategoryId">Dish category id</string>
+    <string name="eTDishCategoryId" />
+    <string name="wait">WAIT</string>
 </resources>

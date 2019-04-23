@@ -25,19 +25,13 @@
         android:layout_height="wrap_content"
         android:text="@string/adminButton" />
 
+    <Button
+        android:id="@+id/dieticianButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dieticianButton" />
+
     <!--
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/loginButton" />
-
-    <Button
-        android:id="@+id/addDishCategoryButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/addDishCategoryButton" />
 
     <Button
         android:id="@+id/getDishCategoriesButton"

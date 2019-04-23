@@ -9,9 +9,9 @@ public class Dish
     private long dishCategoryId;
     private DishCategory dishCategory;
 
-    public Dish(long id, String dishName, double dishPrice, long estimatedPreparationTime, DishCategory dishCategory)
+    public Dish(String dishName, double dishPrice, long estimatedPreparationTime, DishCategory dishCategory)
     {
-        this.id = id;
+        this.id = 0;
         this.dishName = dishName;
         this.dishPrice = dishPrice;
         this.estimatedPreparationTime = estimatedPreparationTime;

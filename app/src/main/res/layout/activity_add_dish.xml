@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.AddDishActivity">
+
+    <TextView
+        android:id="@+id/textViewAddingDish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addingNewDishText"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewDishName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dishNameTextView" />
+
+    <EditText
+        android:id="@+id/editTextDishName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/eTDishName" />
+
+    <TextView
+        android:id="@+id/textViewDishPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dishPriceTV" />
+
+    <EditText
+        android:id="@+id/editTextDishPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="@string/eTDishPrice" />
+
+    <TextView
+        android:id="@+id/textViewEstimatedPrepTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tVEstimatedPrepTime" />
+
+    <EditText
+        android:id="@+id/editTextEstimatedPrepTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/eTEstimatedPrepTime" />
+
+    <TextView
+        android:id="@+id/textViewDishCategoryId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tVDishCategoryId" />
+
+    <EditText
+        android:id="@+id/editTextDishCategoryId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/eTDishCategoryId" />
+
+
+    <Button
+        android:id="@+id/buttonAddDishToDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addDishToDBText" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

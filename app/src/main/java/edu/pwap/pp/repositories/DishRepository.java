@@ -2,6 +2,9 @@ package edu.pwap.pp.repositories;
 
 import edu.pwap.pp.dataGetters.ConnectionInitializer;
 import edu.pwap.pp.models.Dish;
+import edu.pwap.pp.models.DishCategory;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class DishRepository
 {
@@ -24,6 +27,8 @@ public class DishRepository
 
     public void addDish(Dish dish)
     {
-        //TODO
+        Call<Dish> call = connectionInitializer.getAddDishCall(dish);
+        Callback<Dish> dishCallback = connectionInitializer.setAddDishCallback();
+        call.enqueue(dishCallback);
     }
 }

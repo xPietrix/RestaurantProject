@@ -15,7 +15,7 @@ public interface DishCategoryApi
     Call<List<DishCategory>> getDishCategories();
 
     @GET("dishcategory/{id}")
-    Call<DishCategory> getDishCategory(@Path("id") String id);
+    Call<DishCategory> getDishCategory(@Path("id") long id);
 
     @POST("dishcategory/add")
     Call<DishCategory> addDishCategory(@Body DishCategory dishCategory);

@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity
     private String role;
     final User user = new User("Piotr", "haslo");
     long id = 2;
-    private DishCategory dishCategory = new DishCategory(id, "Obiady");
+    private DishCategory dishCategory = new DishCategory("Obiady");
     private Dish dish = new Dish(4, "Golabki", 10.99, 1000, dishCategory);
-    private Button addUserButton;
+    private Button adminButton;
     private Button loginButton;
     private Button addDishCategoryButton;
     private Button getDishCategoriesButton;
@@ -40,18 +40,20 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view_result);
-        textView.setText("TESTOWANKO");
+        textView.setText("CHOOSE YOUR ROLE:");
 
-        addUserButton = findViewById(R.id.addButton);
-        addUserButton.setOnClickListener(new View.OnClickListener()
+
+        adminButton = findViewById(R.id.adminButton);
+        adminButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                openAddUserActivity();
+                openAdminViewActivity();
             }
         });
 
+        /*
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener()
         {
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity
                 openGetDishCategoriesActivity();
             }
         });
-
+*/
 
         //text = getEverything.getDishCategories();
         ///textView.setText(text);
@@ -490,6 +492,12 @@ public class MainActivity extends AppCompatActivity
     public void openErrorActivity()
     {
         Intent intent = new Intent(this, ConnectionErrorActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAdminViewActivity()
+    {
+        Intent intent = new Intent(this, AdminViewActitivity.class);
         startActivity(intent);
     }
 }

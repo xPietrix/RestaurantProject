@@ -1,16 +1,19 @@
 package edu.pwap.pp.dataGetters;
 
+import android.content.Intent;
+
+import edu.pwap.pp.activities.ConnectionErrorActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CustomCallback implements Callback
 {
-    //private AddUserActivity aua;
+    private ConnectionErrorActivity connErrorAct;
 
     public CustomCallback()
     {
-      //  this.aua = new AddUserActivity();
+        connErrorAct = new ConnectionErrorActivity();
     }
 
     @Override
@@ -18,18 +21,14 @@ public class CustomCallback implements Callback
     {
         if(!response.isSuccessful())
         {
-        //    aua.showNoResponseError(response);
+            connErrorAct.showNoResponseError(response);
             return;
-        }
-        else
-        {
-          //  aua.showSuccessfulCall();
         }
     }
 
     @Override
     public void onFailure(Call call, Throwable t)
     {
-        //aua.showOnFailureError(t);
+        connErrorAct.showOnFailureError(t);
     }
 }

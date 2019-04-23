@@ -14,8 +14,6 @@
     <string name="textViewAddingUser">ADDING USER</string>
     <string name="textViewLogging">LOGGING</string>
     <string name="tvAddingDishCategory">ADDING DISH CATEGORY</string>
-    <string name="tvDishCategoryId">Dish category id</string>
-    <string name="eTDishCategoryId"></string>
     <string name="tvDishCategoryName">Dish category name</string>
     <string name="eTDishCategoryName"></string>
     <string name="buttonAddDishCategory">Add dish category</string>
@@ -25,4 +23,6 @@
     <string name="getDishCategories">Get Dish Categories</string>
     <string name="getDishCategoriesButtonText">Button</string>
     <string name="textViewRole">Role</string>
+    <string name="adminButton">ADMIN</string>
+    <string name="adminViewText">ADMIN VIEW</string>
 </resources>

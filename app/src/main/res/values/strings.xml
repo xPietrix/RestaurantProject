@@ -44,4 +44,5 @@
     <string name="tVDishCategoryId">Dish category id</string>
     <string name="eTDishCategoryId" />
     <string name="wait">WAIT</string>
+    <string name="tVDishCategoryName">Dish category name</string>
 </resources>

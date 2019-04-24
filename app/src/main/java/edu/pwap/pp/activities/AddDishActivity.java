@@ -5,33 +5,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import edu.pwap.pp.R;
-import edu.pwap.pp.dataGetters.GetEverything;
 import edu.pwap.pp.models.Dish;
 import edu.pwap.pp.models.DishCategory;
-import edu.pwap.pp.repositories.DishCategoryRepository;
 import edu.pwap.pp.repositories.DishRepository;
-import edu.pwap.pp.services.DishCategoryService;
 import edu.pwap.pp.services.DishService;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AddDishActivity extends AppCompatActivity
 {
-    private Button addDishToDBButton;
-    private TextView dishNameTV;
     private EditText dishNameText;
     private EditText dishPriceText;
     private EditText estimatedPrepTimeText;
     private EditText dishCategoryIdText;
-    private TextView textViewAddingDish;
-
-    private String content;
-    private DishCategory category;
+    private EditText dishCategoryNameText;
+    private Button addDishToDBButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,17 +28,14 @@ public class AddDishActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_dish);
 
-        textViewAddingDish = findViewById(R.id.textViewAddingDish);
         addDishToDBButton = findViewById(R.id.buttonAddDishToDB);
-        dishNameTV = findViewById(R.id.textViewDishName);
         dishNameText = findViewById(R.id.editTextDishName);
         dishPriceText = findViewById(R.id.editTextDishPrice);
         estimatedPrepTimeText = findViewById(R.id.editTextEstimatedPrepTime);
         dishCategoryIdText = findViewById(R.id.editTextDishCategoryId);
+        dishCategoryNameText = findViewById(R.id.editTextDishCategoryName);
 
-        //setAddDishButtonListener();
-        getDishCategoryWithId(3);
-        //textViewAddingDish.append(getCategory().toString());
+        setAddDishButtonListener();
     }
 
     public void addDish(Dish dish)
@@ -68,32 +54,25 @@ public class AddDishActivity extends AppCompatActivity
                 String name = dishNameText.getText().toString();
                 double price = Double.parseDouble(dishPriceText.getText().toString());
                 long estimatedPrepTime = Long.parseLong(estimatedPrepTimeText.getText().toString());
-                //long categoryId = categoryIdText.getText();
-
                 long categoryId = Long.parseLong(dishCategoryIdText.getText().toString());
-                //getDishCategoryWithId(categoryId);
-                //String categoryName = this.category.getCategoryName();
-                //String categoryName = "Obiady";
-                //DishCategory dishCategory = getDishCategory(categoryId);
-                //dishCategory.setId(categoryId);
-                //DishCategory dishCategory = new DishCategory(categoryId, categoryName);
-               // Dish dish = new Dish(name, price, estimatedPrepTime, dishCategory);
-                //addDish(dish);
+                String categoryName = dishCategoryNameText.getText().toString();
 
-                //getDishCategoryWithId(3);
+                DishCategory dishCategory = new DishCategory(categoryId, categoryName);
+                Dish dish = new Dish(name, price, estimatedPrepTime, dishCategory);
+                addDish(dish);
 
                 Toast.makeText(v.getContext(),"Dish added to database", Toast.LENGTH_SHORT).show();
                 dishNameText.setText("");
+                dishPriceText.setText("");
+                estimatedPrepTimeText.setText("");
+                dishCategoryIdText.setText("");
+                dishCategoryNameText.setText("");
             }
         });
     }
 
-    /*public DishCategory getDishCategory(long id)
-    {
-        DishCategoryService dishCategoryService = new DishCategoryService(new DishCategoryRepository());
-        return dishCategoryService.getDishCategory(id);
-    }*/
 
+    /*
     public void getDishCategoryWithId(long id)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
@@ -124,37 +103,6 @@ public class AddDishActivity extends AppCompatActivity
             }
         });
     }
+    */
 
-    public String getTextView()
-    {
-        return this.content;
-    }
-
-    public void setTextView(String content)
-    {
-        this.content = content;
-    }
-
-    public void appendTextView(String content)
-    {
-        textViewAddingDish.append(content);
-    }
-
-    public void setCategory(DishCategory category)
-    {
-        this.category = category;
-        String content="";
-
-        content = content + "\n";
-        content = content + "ID: " + this.category.getId() + "\n";
-        content = content + "Category name: " + this.category.getCategoryName() + "\n";
-
-        //setTextView(content);
-        textViewAddingDish.append(content);
-    }
-
-    public DishCategory getCategory()
-    {
-        return this.category;
-    }
 }

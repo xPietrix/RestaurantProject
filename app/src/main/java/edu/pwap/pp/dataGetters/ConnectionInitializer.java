@@ -47,7 +47,7 @@ public class ConnectionInitializer
 
     public Callback<DishCategory> setGetDishCategoryCallback()
     {
-        GetDishCategoryCallback callback = new GetDishCategoryCallback();
+        Callback<DishCategory> callback = new CustomCallback();
         return callback;
     }
 

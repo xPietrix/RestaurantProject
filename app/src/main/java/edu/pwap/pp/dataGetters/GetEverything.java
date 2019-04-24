@@ -24,10 +24,6 @@ public class GetEverything
         return retrofit;
     }
 
-    public GetEverything()
-    {
-
-    }
     // SET API //
 
     public JsonPlaceHolderApi setApi()
@@ -65,7 +61,7 @@ public class GetEverything
         return orderApi;
     }
 
-    // GET DATA //
+    // GET DATA FROM RESPONSE //
 
     public String getNotes(Response<List<Note>> response)
     {

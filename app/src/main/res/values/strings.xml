@@ -45,4 +45,6 @@
     <string name="eTDishCategoryId" />
     <string name="wait">WAIT</string>
     <string name="tVDishCategoryName">Dish category name</string>
+    <string name="tVChooseDishCategory">Choose dish category</string>
+    <string name="buttonShowDishesWithCategory">SHOW</string>
 </resources>

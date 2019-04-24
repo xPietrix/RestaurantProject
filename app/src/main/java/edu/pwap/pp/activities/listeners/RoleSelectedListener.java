@@ -1,4 +1,4 @@
-package edu.pwap.pp.activities;
+package edu.pwap.pp.activities.listeners;
 
 import android.view.View;
 import android.widget.AdapterView;

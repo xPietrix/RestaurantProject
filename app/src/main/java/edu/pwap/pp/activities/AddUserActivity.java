@@ -15,6 +15,7 @@ import java.util.List;
 import android.view.View.OnClickListener;
 
 import edu.pwap.pp.R;
+import edu.pwap.pp.activities.listeners.RoleSelectedListener;
 import edu.pwap.pp.models.User;
 import edu.pwap.pp.repositories.UserRepository;
 import edu.pwap.pp.services.UserService;

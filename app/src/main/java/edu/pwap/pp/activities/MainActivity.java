@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else
                 {
-                    String content = getEverything.getDishesWithCategory(response);
+                    String content = getEverything.getDishesWithCategoryString(response);
                     textView.append(content);
                 }
             }

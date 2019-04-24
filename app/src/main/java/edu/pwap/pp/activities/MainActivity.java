@@ -19,6 +19,7 @@ import edu.pwap.pp.services.UserService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity
     final User user = new User("Piotr", "haslo");
     long id = 2;
     private DishCategory dishCategory = new DishCategory("Obiady");
-    private Dish dish = new Dish(4, "Golabki", 10.99, 1000, dishCategory);
+    private Dish dish = new Dish("Golabki", 10.99, 1000, dishCategory);
     private Button adminButton;
-    private Button loginButton;
+    private Button dieticianButton;
     private Button addDishCategoryButton;
     private Button getDishCategoriesButton;
 
@@ -42,9 +43,8 @@ public class MainActivity extends AppCompatActivity
         textView = findViewById(R.id.text_view_result);
         textView.setText("CHOOSE YOUR ROLE:");
 
-
         adminButton = findViewById(R.id.adminButton);
-        adminButton.setOnClickListener(new View.OnClickListener()
+        adminButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -53,19 +53,20 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /*
-        loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener()
+
+        dieticianButton = findViewById(R.id.dieticianButton);
+        dieticianButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                openLoggingActivity();
+                openDieticianViewActivity();
             }
         });
 
+        /*
         addDishCategoryButton = findViewById(R.id.addDishCategoryButton);
-        addDishCategoryButton.setOnClickListener(new View.OnClickListener()
+        addDishCategoryButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         });
 
         getDishCategoriesButton = findViewById(R.id.getDishCategoriesButton);
-        getDishCategoriesButton.setOnClickListener(new View.OnClickListener()
+        getDishCategoriesButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void getDishCategory(String id)
+    private void getDishCategory(long id)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
         getEverything = new GetEverything("http:/192.168.43.79:8080/");
@@ -271,37 +272,6 @@ public class MainActivity extends AppCompatActivity
                 {
                     String content = getEverything.getDishWithId(response);
                     textView.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Dish> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
-    }
-
-    public void addDish(Dish dish)
-    {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        Call<Dish> call = getEverything.setDishApi().addDish(dish);
-
-        call.enqueue(new Callback<Dish>()
-        {
-            @Override
-            public void onResponse(Call<Dish> call, Response<Dish> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = "Dodano";
-                    textView.setText(content);
                 }
             }
 
@@ -465,21 +435,9 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void openAddUserActivity()
-    {
-        Intent intent = new Intent(this, AddUserActivity.class);
-        startActivity(intent);
-    }
-
     public void openLoggingActivity()
     {
         Intent intent = new Intent(this, LoggingActivity.class);
-        startActivity(intent);
-    }
-
-    public void openAddDishCategoryActivity()
-    {
-        Intent intent = new Intent(this, AddDishCategoryActivity.class);
         startActivity(intent);
     }
 
@@ -498,6 +456,12 @@ public class MainActivity extends AppCompatActivity
     public void openAdminViewActivity()
     {
         Intent intent = new Intent(this, AdminViewActitivity.class);
+        startActivity(intent);
+    }
+
+    public void openDieticianViewActivity()
+    {
+        Intent intent = new Intent(this, DieticianViewActivity.class);
         startActivity(intent);
     }
 }

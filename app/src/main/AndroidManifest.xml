@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.CustomerViewActivity"></activity>
+        <activity android:name=".activities.GetAllDishCategoriesActivity"></activity>
+        <activity android:name=".activities.GetAllDishesActivity" />
+        <activity android:name=".activities.AddDishActivity" />
+        <activity android:name=".activities.CustomerViewActivity" />
         <activity android:name=".activities.WaiterViewActivity" />
         <activity android:name=".activities.DieticianViewActivity" />
         <activity android:name=".activities.AdminViewActitivity" />

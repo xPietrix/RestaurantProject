@@ -55,20 +55,4 @@ public class LoggingActivity extends AppCompatActivity
         UserService userService = new UserService(new UserRepository());
         userService.login(user);
     }
-
-
-    public void showNoResponseError(Response<User> response)
-    {
-        Toast.makeText(LoggingActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showOnFailureError(Throwable t)
-    {
-        Toast.makeText(LoggingActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showSuccessfulCall()
-    {
-        Toast.makeText(LoggingActivity.this, "Successful call", Toast.LENGTH_SHORT).show();
-    }
 }

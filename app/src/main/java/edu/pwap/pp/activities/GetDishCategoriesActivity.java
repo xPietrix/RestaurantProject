@@ -42,19 +42,4 @@ public class GetDishCategoriesActivity extends AppCompatActivity
         content = content + dishCategoryService.getDishCategories();
         return content;
     }
-
-    public void showNoResponseError(Response<List<DishCategory>> response)
-    {
-        Toast.makeText(GetDishCategoriesActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showOnFailureError(Throwable t)
-    {
-        Toast.makeText(GetDishCategoriesActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void showSuccessfulCall()
-    {
-        Toast.makeText(GetDishCategoriesActivity.this, "Successful call", Toast.LENGTH_SHORT).show();
-    }
 }

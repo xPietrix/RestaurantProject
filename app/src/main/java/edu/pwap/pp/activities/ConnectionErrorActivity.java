@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import edu.pwap.pp.R;
-import edu.pwap.pp.models.DishCategory;
-import edu.pwap.pp.models.User;
 import retrofit2.Response;
 
 public class ConnectionErrorActivity extends AppCompatActivity

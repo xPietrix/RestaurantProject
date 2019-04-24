@@ -19,6 +19,11 @@ public class AdminViewActitivity extends AppCompatActivity
         setContentView(R.layout.activity_admin_view_actitivity);
 
         addUserButton = findViewById(R.id.buttonAddUser);
+        setAddUserButtonListener();
+    }
+
+    public void setAddUserButtonListener()
+    {
         addUserButton.setOnClickListener(new View.OnClickListener()
         {
             @Override

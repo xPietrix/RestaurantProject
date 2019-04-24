@@ -2,6 +2,7 @@ package edu.pwap.pp.dataGetters;
 
 import java.util.List;
 
+import edu.pwap.pp.models.Dish;
 import edu.pwap.pp.models.DishCategory;
 import edu.pwap.pp.models.User;
 import retrofit2.Call;
@@ -38,6 +39,19 @@ public class ConnectionInitializer
         return callback;
     }
 
+    public Callback<Dish> setAddDishCallback()
+    {
+        Callback<Dish> callback = new CustomCallback();
+        return callback;
+    }
+
+    public Callback<DishCategory> setGetDishCategoryCallback()
+    {
+        Callback<DishCategory> callback = new CustomCallback();
+        return callback;
+    }
+
+
     public Call<User> getAddUserCall(String role, User user)
     {
         return this.getEverything.setUserApi().addUser(role, user);
@@ -53,8 +67,18 @@ public class ConnectionInitializer
         return this.getEverything.setDishCategoryApi().addDishCategory(dishCategory);
     }
 
-    public Call<List<DishCategory>> getDishCategories()
+    public Call<List<DishCategory>> getDishCategoriesCall()
     {
         return this.getEverything.setDishCategoryApi().getDishCategories();
+    }
+
+    public Call<DishCategory> getDishCategoryCall(long id)
+    {
+        return this.getEverything.setDishCategoryApi().getDishCategory(id);
+    }
+
+    public Call<Dish> getAddDishCall(Dish dish)
+    {
+        return this.getEverything.setDishApi().addDish(dish);
     }
 }

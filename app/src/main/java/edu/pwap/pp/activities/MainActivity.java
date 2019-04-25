@@ -3,19 +3,17 @@ package edu.pwap.pp.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import edu.pwap.pp.R;
 import edu.pwap.pp.dataGetters.GetEverything;
 import edu.pwap.pp.models.*;
-import edu.pwap.pp.repositories.UserRepository;
-import edu.pwap.pp.services.UserService;
+import edu.pwap.pp.repositories.DishRepository;
+import edu.pwap.pp.services.DishService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     private Button dieticianButton;
     private Button addDishCategoryButton;
     private Button getDishCategoriesButton;
+    private DishService dishService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -225,7 +224,9 @@ public class MainActivity extends AppCompatActivity
 
     private void getDishesWithCategory(String id)
     {
-        getEverything = new GetEverything("http:/192.168.1.101:8080/");
+        dishService = new DishService(new DishRepository());
+
+       // getEverything = new GetEverything("http:/192.168.1.101:8080/");
         //getEverything = new GetEverything("http:/192.168.43.79:8080/");
         Call<List<Dish>> call = getEverything.setDishApi().getDishWithCategory(id);
         call.enqueue(new Callback<List<Dish>>()
@@ -240,7 +241,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else
                 {
-                    String content = getEverything.getDishesWithCategoryString(response);
+                    String content = dishService.getDishesWithCategoryString(response);
                     textView.append(content);
                 }
             }
@@ -255,8 +256,11 @@ public class MainActivity extends AppCompatActivity
 
     private void getDishWithId(String id)
     {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
+        getEverything = new GetEverything("http:/192.168.1.101:8080/");
+     //   getEverything = new GetEverything("http:/192.168.43.79:8080/");
+
+
+
         Call<Dish> call = getEverything.setDishApi().getDishWithId(id);
         call.enqueue(new Callback<Dish>()
         {
@@ -441,12 +445,6 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void openGetDishCategoriesActivity()
-    {
-        Intent intent = new Intent(this, GetDishCategoriesActivity.class);
-        startActivity(intent);
-    }
-
     public void openErrorActivity()
     {
         Intent intent = new Intent(this, ConnectionErrorActivity.class);
@@ -455,7 +453,7 @@ public class MainActivity extends AppCompatActivity
 
     public void openAdminViewActivity()
     {
-        Intent intent = new Intent(this, AdminViewActitivity.class);
+        Intent intent = new Intent(this, AdminViewActivity.class);
         startActivity(intent);
     }
 

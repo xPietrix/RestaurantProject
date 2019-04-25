@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import edu.pwap.pp.R;
 
-public class AdminViewActitivity extends AppCompatActivity
+public class AdminViewActivity extends AppCompatActivity
 {
     private Button addUserButton;
 

@@ -81,4 +81,9 @@ public class ConnectionInitializer
     {
         return this.getEverything.setDishApi().addDish(dish);
     }
+
+    public Call<List<Dish>> getGetDishesWithCategoryCall(String id)
+    {
+        return this.getEverything.setDishApi().getDishWithCategory(id);
+    }
 }

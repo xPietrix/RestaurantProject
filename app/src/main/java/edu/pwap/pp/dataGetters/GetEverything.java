@@ -103,25 +103,6 @@ public class GetEverything
         return content;
     }
 
-    public String getDishesWithCategoryString(Response<List<Dish>> response)
-    {
-        List<Dish> dishes = response.body();
-
-        String content = "";
-        content = content + "Dish category name: " + dishes.get(0).getDishCategory().getCategoryName() + "\n" + "\n";
-        for(Dish dish: dishes)
-        {
-            content = content + "ID: " + dish.getId() + "\n";
-            content = content + "Dish name: " + dish.getDishName() + "\n";
-            content = content + "Dish price: " + dish.getDishPrice() + "\n";
-            content = content + "Estimated preparation time: " + dish.getEstimatedPreparationTime() + "\n";
-            content = content + "Dish category id: " + dish.getDishCategory().getId() + "\n" + "\n";
-        }
-        content = content + "\n";
-
-        return content;
-    }
-
     public String getDishWithId(Response<Dish> response)
     {
         Dish dish = response.body();

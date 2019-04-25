@@ -18,9 +18,8 @@
         <activity android:name=".activities.CustomerViewActivity" />
         <activity android:name=".activities.WaiterViewActivity" />
         <activity android:name=".activities.DieticianViewActivity" />
-        <activity android:name=".activities.AdminViewActitivity" />
+        <activity android:name=".activities.AdminViewActivity" />
         <activity android:name=".activities.ConnectionErrorActivity" />
-        <activity android:name=".activities.GetDishCategoriesActivity" />
         <activity android:name=".activities.AddDishCategoryActivity" />
         <activity android:name=".activities.LoggingActivity" />
         <activity android:name=".activities.AddUserActivity" />

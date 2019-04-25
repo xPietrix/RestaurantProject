@@ -70,39 +70,4 @@ public class AddDishActivity extends AppCompatActivity
             }
         });
     }
-
-
-    /*
-    public void getDishCategoryWithId(long id)
-    {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        //getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        DishCategoryService dishCategoryService = new DishCategoryService(new DishCategoryRepository());
-        Call<DishCategory> call = dishCategoryService.getDishCategory(id);
-        call.enqueue(new Callback<DishCategory>()
-        {
-            @Override
-            public void onResponse(Call<DishCategory> call, Response<DishCategory> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textViewAddingDish.setText("Code: " + response.code());
-                    return;
-                }
-
-                DishCategory category = response.body();
-
-                category = new DishCategory(category.getId(), category.getCategoryName());
-                setCategory(category);
-            }
-
-            @Override
-            public void onFailure(Call<DishCategory> call, Throwable t)
-            {
-                textViewAddingDish.setText(t.getMessage());
-            }
-        });
-    }
-    */
-
 }

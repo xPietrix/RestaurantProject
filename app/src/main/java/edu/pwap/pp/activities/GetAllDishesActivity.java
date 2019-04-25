@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,10 @@ import edu.pwap.pp.R;
 import edu.pwap.pp.activities.listeners.DishCategorySelectedListener;
 import edu.pwap.pp.dataGetters.GetEverything;
 import edu.pwap.pp.models.Dish;
+import edu.pwap.pp.repositories.DishCategoryRepository;
+import edu.pwap.pp.repositories.DishRepository;
+import edu.pwap.pp.services.DishCategoryService;
+import edu.pwap.pp.services.DishService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,8 +30,8 @@ public class GetAllDishesActivity extends AppCompatActivity
     private TextView textViewDishCategory;
     private Spinner dishCategorySpinner;
     private DishCategorySelectedListener listener;
-    private GetEverything getEverything;
     private Button showDishesWithCategoryButton;
+    private DishService dishService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,12 +51,11 @@ public class GetAllDishesActivity extends AppCompatActivity
         addListenerOnSpinnerItemSelection();
     }
 
-    public void getAllDishesWithCategory(String id)
+    public void getAllDishesWithCategory(String dishCategoryId)
     {
-        getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        //getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        String dishCategoryId = id;
-        Call<List<Dish>> call = getEverything.setDishApi().getDishWithCategory(dishCategoryId);
+        dishService = new DishService(new DishRepository());
+        Call<List<Dish>> call = dishService.getDishesWithCategory(dishCategoryId);
+
         call.enqueue(new Callback<List<Dish>>()
         {
             @Override
@@ -64,7 +68,7 @@ public class GetAllDishesActivity extends AppCompatActivity
                 }
                 else
                 {
-                    String content = getEverything.getDishesWithCategoryString(response);
+                    String content = dishService.getDishesWithCategoryString(response);
                     textViewAllDishesList.setText(content);
                 }
             }

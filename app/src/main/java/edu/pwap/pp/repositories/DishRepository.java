@@ -1,10 +1,13 @@
 package edu.pwap.pp.repositories;
 
+import java.util.List;
+
 import edu.pwap.pp.dataGetters.ConnectionInitializer;
 import edu.pwap.pp.models.Dish;
 import edu.pwap.pp.models.DishCategory;
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DishRepository
 {
@@ -15,9 +18,29 @@ public class DishRepository
         this.connectionInitializer = new ConnectionInitializer();
     }
 
-    public void getDishWithCategory(String id)
+    public Call<List<Dish>> getDishesWithCategory(String id)
     {
-        //TODO
+        Call<List<Dish>> call = connectionInitializer.getGetDishesWithCategoryCall(id);
+        return call;
+    }
+
+    public String getDishesWithCategoryString(Response<List<Dish>> response)
+    {
+        List<Dish> dishes = response.body();
+
+        String content = "";
+        content = content + "Dish category name: " + dishes.get(0).getDishCategory().getCategoryName() + "\n" + "\n";
+        for(Dish dish: dishes)
+        {
+            content = content + "ID: " + dish.getId() + "\n";
+            content = content + "Dish name: " + dish.getDishName() + "\n";
+            content = content + "Dish price: " + dish.getDishPrice() + "\n";
+            content = content + "Estimated preparation time: " + dish.getEstimatedPreparationTime() + "\n";
+            content = content + "Dish category id: " + dish.getDishCategory().getId() + "\n" + "\n";
+        }
+        content = content + "\n";
+
+        return content;
     }
 
     public void getDishWithId(String id)

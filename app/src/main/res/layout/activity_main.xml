@@ -31,15 +31,11 @@
         android:layout_height="wrap_content"
         android:text="@string/dieticianButton" />
 
-    <!--
-
     <Button
-        android:id="@+id/getDishCategoriesButton"
+        android:id="@+id/waiterButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/getDishCategories" />
-
-    -->
+        android:text="@string/waiterButtonText" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

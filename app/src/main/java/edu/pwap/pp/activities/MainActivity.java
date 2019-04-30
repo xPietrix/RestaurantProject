@@ -7,13 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.List;
-
 import edu.pwap.pp.R;
-import edu.pwap.pp.dataGetters.GetEverything;
 import edu.pwap.pp.models.*;
-import edu.pwap.pp.repositories.DishRepository;
-import edu.pwap.pp.services.DishService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,7 +17,7 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity
 {
     private TextView textView;
-    private GetEverything getEverything;
+    //private GetEverything getEverything;
     private String role;
     final User user = new User("Piotr", "haslo");
     long id = 2;
@@ -30,9 +25,8 @@ public class MainActivity extends AppCompatActivity
     private Dish dish = new Dish("Golabki", 10.99, 1000, dishCategory);
     private Button adminButton;
     private Button dieticianButton;
-    private Button addDishCategoryButton;
-    private Button getDishCategoriesButton;
-    private DishService dishService;
+    private Button waiterButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -52,7 +46,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
         dieticianButton = findViewById(R.id.dieticianButton);
         dieticianButton.setOnClickListener(new OnClickListener()
         {
@@ -60,6 +53,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 openDieticianViewActivity();
+            }
+        });
+
+        waiterButton = findViewById(R.id.waiterButton);
+        waiterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                openWaiterViewActivity();
             }
         });
 
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity
     private void getDishCategory(long id)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
+        /*getEverything = new GetEverything("http:/192.168.43.79:8080/");
         Call<DishCategory> call = getEverything.setDishCategoryApi().getDishCategory(id);
         call.enqueue(new Callback<DishCategory>()
         {
@@ -159,109 +161,18 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(t.getMessage());
             }
-        });
-    }
-
-    private void getNotesFromJsonPlaceholder()
-    {
-        getEverything = new GetEverything("https://jsonplaceholder.typicode.com/");
-        Call<List<Note>> call = getEverything.setApi().getNotes();
-
-        call.enqueue(new Callback<List<Note>>()
-        {
-            @Override
-            public void onResponse(Call<List<Note>> call, Response<List<Note>> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = getEverything.getNotes(response);
-                    textView.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Note>> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
-    }
-
-    private void getDishCategories()
-    {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        Call<List<DishCategory>> call = getEverything.setDishCategoryApi().getDishCategories();
-        call.enqueue(new Callback<List<DishCategory>>()
-        {
-            @Override
-            public void onResponse(Call<List<DishCategory>> call, Response<List<DishCategory>> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = getEverything.getDishCategoriesString(response);
-                    textView.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<DishCategory>> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
-    }
-
-    private void getDishesWithCategory(String id)
-    {
-        dishService = new DishService(new DishRepository());
-
-       // getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        //getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        Call<List<Dish>> call = getEverything.setDishApi().getDishWithCategory(id);
-        call.enqueue(new Callback<List<Dish>>()
-        {
-            @Override
-            public void onResponse(Call<List<Dish>> call, Response<List<Dish>> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = dishService.getDishesWithCategoryString(response);
-                    textView.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Dish>> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
+        }); */
     }
 
     private void getDishWithId(String id)
     {
-        getEverything = new GetEverything("http:/192.168.1.101:8080/");
+       // getEverything = new GetEverything("http:/192.168.1.101:8080/");
      //   getEverything = new GetEverything("http:/192.168.43.79:8080/");
 
 
 
-        Call<Dish> call = getEverything.setDishApi().getDishWithId(id);
+     /*   Call<Dish> call = getEverything.setDishApi().getDishWithId(id);
+
         call.enqueue(new Callback<Dish>()
         {
             @Override
@@ -284,17 +195,17 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(t.getMessage());
             }
-        });
+        }); */
     }
 
     public void addOrder(Order order)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
+        // getEverything = new GetEverything("http:/192.168.43.79:8080/");
         //getEverything = new GetEverything("http:/10.128.161.100:8080/");
-        Call<Order> call = getEverything.setOrderApi().addOrder(order);
+       // Call<Order> call = getEverything.setOrderApi().addOrder(order);
 
-        call.enqueue(new Callback<Order>()
+        /*call.enqueue(new Callback<Order>()
         {
             @Override
             public void onResponse(Call<Order> call, Response<Order> response)
@@ -316,13 +227,13 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(t.getMessage());
             }
-        });
+        });*/
     }
 
     public void getOrdersToPrepare()
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
+        /*getEverything = new GetEverything("http:/192.168.43.79:8080/");
         Call<List<Order>> call = getEverything.setOrderApi().getOrdersToPrepare();
         call.enqueue(new Callback<List<Order>>()
         {
@@ -346,43 +257,13 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(t.getMessage());
             }
-        });
-    }
-
-    public void getOrdersToDeliver()
-    {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        Call<List<Order>> call = getEverything.setOrderApi().getOrdersToDeliver();
-        call.enqueue(new Callback<List<Order>>()
-        {
-            @Override
-            public void onResponse(Call<List<Order>> call, Response<List<Order>> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = getEverything.getOrdersToPrepareOrDeliver(response);
-                    textView.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Order>> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
+        }); */
     }
 
     public void addOrderToPrepare(String orderId)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
+        /*getEverything = new GetEverything("http:/192.168.43.79:8080/");
         Call<Integer> call = getEverything.setOrderApi().addOrderToPrepare(orderId);
         call.enqueue(new Callback<Integer>()
         {
@@ -406,37 +287,7 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(t.getMessage());
             }
-        });
-    }
-
-    public void addOrderToDeliver(String orderId)
-    {
-        //getEverything = new GetEverything("http:/192.168.1.101:8080/");
-        getEverything = new GetEverything("http:/192.168.43.79:8080/");
-        Call<Integer> call = getEverything.setOrderApi().addOrderToDeliver(orderId);
-        call.enqueue(new Callback<Integer>()
-        {
-            @Override
-            public void onResponse(Call<Integer> call, Response<Integer> response)
-            {
-                if(!response.isSuccessful())
-                {
-                    textView.setText("Code: " + response.code());
-                    return;
-                }
-                else
-                {
-                    String content = "Dodano order do przygotowania";
-                    textView.setText(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Integer> call, Throwable t)
-            {
-                textView.setText(t.getMessage());
-            }
-        });
+        }); */
     }
 
     public void openLoggingActivity()
@@ -460,6 +311,12 @@ public class MainActivity extends AppCompatActivity
     public void openDieticianViewActivity()
     {
         Intent intent = new Intent(this, DieticianViewActivity.class);
+        startActivity(intent);
+    }
+
+    public void openWaiterViewActivity()
+    {
+        Intent intent = new Intent(this, WaiterViewActivity.class);
         startActivity(intent);
     }
 }

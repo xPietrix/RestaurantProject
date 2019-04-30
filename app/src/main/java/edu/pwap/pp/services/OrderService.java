@@ -1,5 +1,6 @@
 package edu.pwap.pp.services;
 
+import edu.pwap.pp.clients.OrderApi;
 import edu.pwap.pp.models.Order;
 import edu.pwap.pp.repositories.OrderRepository;
 
@@ -22,9 +23,9 @@ public class OrderService
         this.orderRepository.addOrderToPrepare(id);
     }
 
-    public void addOrderToDeliver(String id)
+    public void deliverOrder(long orderId, OrderApi api)
     {
-        this.orderRepository.addOrderToDeliver(id);
+        this.orderRepository.deliverOrder(orderId, api);
     }
 
     public void getOrdersToPrepare()
@@ -32,8 +33,8 @@ public class OrderService
         this.orderRepository.getOrdersToPrepare();
     }
 
-    public void getOrdersToDeliver()
+    public void getOrdersToDeliver(OrderApi api)
     {
-        this.orderRepository.getOrdersToDeliver();
+        this.orderRepository.getOrdersToDeliver(api);
     }
 }

@@ -2,10 +2,10 @@ package edu.pwap.pp.services;
 
 import java.util.List;
 
+import edu.pwap.pp.clients.DishCategoryApi;
 import edu.pwap.pp.models.DishCategory;
 import edu.pwap.pp.repositories.DishCategoryRepository;
 import retrofit2.Call;
-import retrofit2.Response;
 
 public class DishCategoryService
 {
@@ -16,14 +16,9 @@ public class DishCategoryService
         this.dishCategoryRepository = dishCategoryRepository;
     }
 
-    public String getDishCategoriesString(Response<List<DishCategory>> response)
+    public List<DishCategory> getAllDishCategories(DishCategoryApi service)
     {
-        return this.dishCategoryRepository.getDishCategoriesString(response);
-    }
-
-    public Call<List<DishCategory>> getAllDishCategories()
-    {
-        return this.dishCategoryRepository.getAllDishCategories();
+        return this.dishCategoryRepository.getAllDishCategories(service);
     }
 
     public Call<DishCategory> getDishCategory(long id)
@@ -31,8 +26,8 @@ public class DishCategoryService
         return this.dishCategoryRepository.getDishCategory(id);
     }
 
-    public void addDishCategory(DishCategory dishCategory)
+    public void addDishCategoryToDatabase(DishCategory dishCategory, DishCategoryApi api)
     {
-        this.dishCategoryRepository.addDishCategory(dishCategory);
+        this.dishCategoryRepository.addDishCategoryToDatabase(dishCategory, api);
     }
 }

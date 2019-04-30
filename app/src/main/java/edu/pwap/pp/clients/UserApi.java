@@ -1,6 +1,7 @@
 package edu.pwap.pp.clients;
 
 import edu.pwap.pp.models.User;
+import io.reactivex.Single;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -12,5 +13,5 @@ public interface UserApi
     Call<User> loginUser(@Body User user);
 
     @POST("user/add/{role}")
-    Call<User> addUser(@Path("role") String role, @Body User user);
+    Single<User> addUserToDatabase(@Path("role") String role, @Body User user);
 }

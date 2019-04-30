@@ -1,46 +1,43 @@
 package edu.pwap.pp.repositories;
 
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import edu.pwap.pp.dataGetters.ConnectionInitializer;
+import edu.pwap.pp.activities.GetAllDishesActivity;
+import edu.pwap.pp.clients.DishApi;
 import edu.pwap.pp.models.Dish;
-import edu.pwap.pp.models.DishCategory;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.observers.DisposableSingleObserver;
+import io.reactivex.schedulers.Schedulers;
 
 public class DishRepository
 {
-    private ConnectionInitializer connectionInitializer;
+    private List<Dish> dishesList;
 
-    public DishRepository()
+    public List<Dish> getDishesWithCategory(String id, DishApi api)
     {
-        this.connectionInitializer = new ConnectionInitializer();
-    }
+        api.getDishesWithCategory(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<List<Dish>>()
+                {
+                    @Override
+                    public void onSuccess(List<Dish> categories)
+                    {
+                        dishesList = new ArrayList<>(categories);
+                        GetAllDishesActivity.changeTextView(dishesList);
+                    }
 
-    public Call<List<Dish>> getDishesWithCategory(String id)
-    {
-        Call<List<Dish>> call = connectionInitializer.getGetDishesWithCategoryCall(id);
-        return call;
-    }
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                    }
+                });
 
-    public String getDishesWithCategoryString(Response<List<Dish>> response)
-    {
-        List<Dish> dishes = response.body();
-
-        String content = "";
-        content = content + "Dish category name: " + dishes.get(0).getDishCategory().getCategoryName() + "\n" + "\n";
-        for(Dish dish: dishes)
-        {
-            content = content + "ID: " + dish.getId() + "\n";
-            content = content + "Dish name: " + dish.getDishName() + "\n";
-            content = content + "Dish price: " + dish.getDishPrice() + "\n";
-            content = content + "Estimated preparation time: " + dish.getEstimatedPreparationTime() + "\n";
-            content = content + "Dish category id: " + dish.getDishCategory().getId() + "\n" + "\n";
-        }
-        content = content + "\n";
-
-        return content;
+        return dishesList;
     }
 
     public void getDishWithId(String id)
@@ -48,10 +45,24 @@ public class DishRepository
         //TODO
     }
 
-    public void addDish(Dish dish)
+    public void addDishToDatabase(Dish dish, DishApi api)
     {
-        Call<Dish> call = connectionInitializer.getAddDishCall(dish);
-        Callback<Dish> dishCallback = connectionInitializer.setAddDishCallback();
-        call.enqueue(dishCallback);
+        api.addDishToDatabase(dish)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<Dish>()
+                {
+                    @Override
+                    public void onSuccess(Dish dish)
+                    {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                    }
+                });
     }
 }

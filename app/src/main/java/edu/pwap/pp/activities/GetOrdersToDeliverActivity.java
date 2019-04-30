@@ -18,7 +18,7 @@ import edu.pwap.pp.network.RetrofitInitializer;
 import edu.pwap.pp.repositories.OrderRepository;
 import edu.pwap.pp.services.OrderService;
 
-public class GetAllOrdersToDeliverActivity extends AppCompatActivity
+public class GetOrdersToDeliverActivity extends AppCompatActivity
 {
     private static TextView tVOrdersToDeliver;
     private Button buttonDeliverOrder;
@@ -27,23 +27,23 @@ public class GetAllOrdersToDeliverActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_all_orders_to_deliver);
+        setContentView(R.layout.activity_get_orders_to_deliver);
 
         tVOrdersToDeliver = findViewById(R.id.tVOrdersToDeliver);
         buttonDeliverOrder = findViewById(R.id.buttonDeliverOrder);
 
         getOrdersToDeliver();
-        setAddButtonListener();
+        setDeliverButtonListener();
     }
 
-    public void getOrdersToDeliver()
+    private void getOrdersToDeliver()
     {
         OrderApi api = RetrofitInitializer.getClient().create(OrderApi.class);
         OrderService orderService = new OrderService(new OrderRepository());
         orderService.getOrdersToDeliver(api);
     }
 
-    public void setAddButtonListener()
+    private void setDeliverButtonListener()
     {
         buttonDeliverOrder.setOnClickListener(new OnClickListener()
         {
@@ -66,6 +66,6 @@ public class GetAllOrdersToDeliverActivity extends AppCompatActivity
 
     public static void changeTextView(List<Order> preparedOrders)
     {
-        tVOrdersToDeliver.append(StringProvider.getAllPreparedOrdersString(preparedOrders));
+        tVOrdersToDeliver.append(StringProvider.getAllOrdersToPrepareOrDeliverString(preparedOrders));
     }
 }

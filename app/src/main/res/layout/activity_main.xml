@@ -37,6 +37,12 @@
         android:layout_height="wrap_content"
         android:text="@string/waiterButtonText" />
 
+    <Button
+        android:id="@+id/chefButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chefButtonText" />
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

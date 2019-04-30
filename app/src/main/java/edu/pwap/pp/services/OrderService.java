@@ -18,19 +18,19 @@ public class OrderService
         this.orderRepository.addOrder(order);
     }
 
-    public void addOrderToPrepare(String id)
-    {
-        this.orderRepository.addOrderToPrepare(id);
-    }
-
     public void deliverOrder(long orderId, OrderApi api)
     {
         this.orderRepository.deliverOrder(orderId, api);
     }
 
-    public void getOrdersToPrepare()
+    public void prepareOrder(long orderId, OrderApi api)
     {
-        this.orderRepository.getOrdersToPrepare();
+        this.orderRepository.prepareOrder(orderId, api);
+    }
+
+    public void getOrdersToPrepare(OrderApi api)
+    {
+        this.orderRepository.getOrdersToPrepare(api);
     }
 
     public void getOrdersToDeliver(OrderApi api)

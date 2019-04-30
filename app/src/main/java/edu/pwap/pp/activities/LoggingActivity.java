@@ -40,7 +40,7 @@ public class LoggingActivity extends AppCompatActivity
         });
     }
 
-    public void login(User user)
+    private void login(User user)
     {
         UserService userService = new UserService(new UserRepository());
         userService.login(user);

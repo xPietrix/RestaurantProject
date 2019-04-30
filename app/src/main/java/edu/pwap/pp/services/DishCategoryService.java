@@ -21,11 +21,6 @@ public class DishCategoryService
         return this.dishCategoryRepository.getAllDishCategories(service);
     }
 
-    public Call<DishCategory> getDishCategory(long id)
-    {
-        return this.dishCategoryRepository.getDishCategory(id);
-    }
-
     public void addDishCategoryToDatabase(DishCategory dishCategory, DishCategoryApi api)
     {
         this.dishCategoryRepository.addDishCategoryToDatabase(dishCategory, api);

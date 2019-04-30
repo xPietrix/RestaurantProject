@@ -46,12 +46,12 @@ public class GetAllDishesActivity extends AppCompatActivity
         addListenerOnSpinnerItemSelection();
     }
 
-    public void addListenerOnSpinnerItemSelection()
+    private void addListenerOnSpinnerItemSelection()
     {
         dishCategorySpinner.setOnItemSelectedListener(listener);
     }
 
-    public void addItemsOnSpinner()
+    private void addItemsOnSpinner()
     {
         List<String> list = new ArrayList<String>();
         list.add("1");
@@ -64,7 +64,7 @@ public class GetAllDishesActivity extends AppCompatActivity
         dishCategorySpinner.setAdapter(dataAdapter);
     }
 
-    public void setAddButtonListener()
+    private void setAddButtonListener()
     {
         showDishesWithCategoryButton.setOnClickListener(new View.OnClickListener()
         {
@@ -77,7 +77,7 @@ public class GetAllDishesActivity extends AppCompatActivity
         });
     }
 
-    public void getDishesWithCategory(String dishCategoryId)
+    private void getDishesWithCategory(String dishCategoryId)
     {
         DishApi api = RetrofitInitializer.getClient().create(DishApi.class);
         dishService = new DishService(new DishRepository());

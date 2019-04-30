@@ -59,4 +59,9 @@
     <string name="appbar_scrolling_view_behavior">xd</string>
     <string name="lbl_edit_note_title">Edit your note</string>
     <string name="buttonDeliverOrderText">DELIVER ORDER</string>
+    <string name="tVChefViewText">CHEF VIEW</string>
+    <string name="buttonCheckOrdersText">CHECK ORDERS</string>
+    <string name="tVOrdersToPrepareText">ORDERS TO PREPARE</string>
+    <string name="chefButtonText">CHEF</string>
+    <string name="buttonPrepareOrderText">PREPARE ORDER</string>
 </resources>

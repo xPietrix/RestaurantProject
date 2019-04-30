@@ -5,7 +5,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.pwap.pp.activities.GetAllOrdersToDeliverActivity;
+import edu.pwap.pp.activities.GetOrdersToDeliverActivity;
+import edu.pwap.pp.activities.GetOrdersToPrepareActivity;
 import edu.pwap.pp.clients.OrderApi;
 import edu.pwap.pp.models.Order;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -15,13 +16,9 @@ import io.reactivex.schedulers.Schedulers;
 public class OrderRepository
 {
     private List<Order> ordersToDeliverList;
+    private List<Order> ordersToPrepareList;
 
     public void addOrder(Order order)
-    {
-        //TODO
-    }
-
-    public void addOrderToPrepare(String id)
     {
         //TODO
     }
@@ -47,9 +44,47 @@ public class OrderRepository
                 });
     }
 
-    public void getOrdersToPrepare()
+    public void getOrdersToPrepare(OrderApi api)
     {
-        //TODO
+        api.getOrdersToPrepare()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<List<Order>>()
+                {
+                    @Override
+                    public void onSuccess(List<Order> ordersToPrepare)
+                    {
+                        ordersToPrepareList = new ArrayList<>(ordersToPrepare);
+                        GetOrdersToPrepareActivity.changeTextView(ordersToPrepareList);
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH GET ORDERS TO DELIVER METHOD!");
+                    }
+                });
+    }
+
+    public void prepareOrder(long id, OrderApi api)
+    {
+        api.prepareOrder(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<Order>()
+                {
+                    @Override
+                    public void onSuccess(Order order)
+                    {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH DELIVER ORDER METHOD!");
+                    }
+                });
     }
 
     public void getOrdersToDeliver(OrderApi api)
@@ -63,7 +98,7 @@ public class OrderRepository
                     public void onSuccess(List<Order> ordersToDeliver)
                     {
                         ordersToDeliverList = new ArrayList<>(ordersToDeliver);
-                        GetAllOrdersToDeliverActivity.changeTextView(ordersToDeliverList);
+                        GetOrdersToDeliverActivity.changeTextView(ordersToDeliverList);
                     }
 
                     @Override

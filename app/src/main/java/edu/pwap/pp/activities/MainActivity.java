@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import edu.pwap.pp.R;
 import edu.pwap.pp.models.*;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity
@@ -26,6 +23,7 @@ public class MainActivity extends AppCompatActivity
     private Button adminButton;
     private Button dieticianButton;
     private Button waiterButton;
+    private Button chefButton;
 
 
     @Override
@@ -62,6 +60,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 openWaiterViewActivity();
+            }
+        });
+
+        chefButton = findViewById(R.id.chefButton);
+        chefButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                openChefViewActivity();
             }
         });
 
@@ -198,7 +205,7 @@ public class MainActivity extends AppCompatActivity
         }); */
     }
 
-    public void addOrder(Order order)
+    private void addOrder(Order order)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
         // getEverything = new GetEverything("http:/192.168.43.79:8080/");
@@ -230,7 +237,7 @@ public class MainActivity extends AppCompatActivity
         });*/
     }
 
-    public void getOrdersToPrepare()
+    private void getOrdersToPrepare()
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
         /*getEverything = new GetEverything("http:/192.168.43.79:8080/");
@@ -260,7 +267,7 @@ public class MainActivity extends AppCompatActivity
         }); */
     }
 
-    public void addOrderToPrepare(String orderId)
+    private void addOrderToPrepare(String orderId)
     {
         //getEverything = new GetEverything("http:/192.168.1.101:8080/");
         /*getEverything = new GetEverything("http:/192.168.43.79:8080/");
@@ -290,33 +297,39 @@ public class MainActivity extends AppCompatActivity
         }); */
     }
 
-    public void openLoggingActivity()
+    private void openLoggingActivity()
     {
         Intent intent = new Intent(this, LoggingActivity.class);
         startActivity(intent);
     }
 
-    public void openErrorActivity()
+    private void openErrorActivity()
     {
         Intent intent = new Intent(this, ConnectionErrorActivity.class);
         startActivity(intent);
     }
 
-    public void openAdminViewActivity()
+    private void openAdminViewActivity()
     {
         Intent intent = new Intent(this, AdminViewActivity.class);
         startActivity(intent);
     }
 
-    public void openDieticianViewActivity()
+    private void openDieticianViewActivity()
     {
         Intent intent = new Intent(this, DieticianViewActivity.class);
         startActivity(intent);
     }
 
-    public void openWaiterViewActivity()
+    private void openWaiterViewActivity()
     {
         Intent intent = new Intent(this, WaiterViewActivity.class);
+        startActivity(intent);
+    }
+
+    private void openChefViewActivity()
+    {
+        Intent intent = new Intent(this, ChefViewActivity.class);
         startActivity(intent);
     }
 }

@@ -38,7 +38,7 @@ public class WaiterViewActivity extends AppCompatActivity
 
     private void openOrdersToDeliverView()
     {
-        Intent intent = new Intent(this, GetAllOrdersToDeliverActivity.class);
+        Intent intent = new Intent(this, GetOrdersToDeliverActivity.class);
         startActivity(intent);
     }
 }

@@ -47,7 +47,7 @@ public class AddUserActivity extends AppCompatActivity
         addListenerOnSpinnerItemSelection();
     }
 
-    public void addItemsOnSpinner()
+    private void addItemsOnSpinner()
     {
         List<String> list = new ArrayList<String>();
         list.add("admin");
@@ -60,7 +60,7 @@ public class AddUserActivity extends AppCompatActivity
         roleSpinner.setAdapter(dataAdapter);
     }
 
-    public void setAddButtonListener()
+    private void setAddButtonListener()
     {
         addButton.setOnClickListener(new OnClickListener()
         {
@@ -79,12 +79,12 @@ public class AddUserActivity extends AppCompatActivity
         });
     }
 
-    public void addListenerOnSpinnerItemSelection()
+    private void addListenerOnSpinnerItemSelection()
     {
         roleSpinner.setOnItemSelectedListener(listener);
     }
 
-    public void addUserToDatabase(String role, User user)
+    private void addUserToDatabase(String role, User user)
     {
         UserApi api = RetrofitInitializer.getClient().create(UserApi.class);
         UserService userService = new UserService(new UserRepository());

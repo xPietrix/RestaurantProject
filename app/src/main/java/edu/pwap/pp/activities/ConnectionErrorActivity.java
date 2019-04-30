@@ -16,12 +16,12 @@ public class ConnectionErrorActivity extends AppCompatActivity
         setContentView(R.layout.activity_connection_error);
     }
 
-    public void showNoResponseError(Response response)
+    private void showNoResponseError(Response response)
     {
         Toast.makeText(ConnectionErrorActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
     }
 
-    public void showOnFailureError(Throwable t)
+    private void showOnFailureError(Throwable t)
     {
         Toast.makeText(ConnectionErrorActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
     }

@@ -31,7 +31,7 @@ public class AddDishCategoryActivity extends AppCompatActivity
         setAddButtonListener();
     }
 
-    public void setAddButtonListener()
+    private void setAddButtonListener()
     {
         addButton.setOnClickListener(new View.OnClickListener()
         {
@@ -48,7 +48,7 @@ public class AddDishCategoryActivity extends AppCompatActivity
         });
     }
 
-    public void addDishCategoryToDatabase(DishCategory dishCategory)
+    private void addDishCategoryToDatabase(DishCategory dishCategory)
     {
         DishCategoryApi api = RetrofitInitializer.getClient().create(DishCategoryApi.class);
         DishCategoryService dishCategoryService = new DishCategoryService(new DishCategoryRepository());

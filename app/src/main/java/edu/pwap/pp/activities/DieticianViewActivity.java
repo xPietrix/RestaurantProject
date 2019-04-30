@@ -33,7 +33,7 @@ public class DieticianViewActivity extends AppCompatActivity
         setGetAllDishCategoriesButtonListener();
     }
 
-    public void setAddDishCategoryButtonListener()
+    private void setAddDishCategoryButtonListener()
     {
         addDishCategoryButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -43,7 +43,7 @@ public class DieticianViewActivity extends AppCompatActivity
         });
     }
 
-    public void setAddDishButtonListener()
+    private void setAddDishButtonListener()
     {
         addDishButton.setOnClickListener(new OnClickListener()
         {
@@ -55,31 +55,31 @@ public class DieticianViewActivity extends AppCompatActivity
         });
     }
 
-    public void openAddDishCategoryActivity()
+    private void openAddDishCategoryActivity()
     {
         Intent intent = new Intent(this, AddDishCategoryActivity.class);
         startActivity(intent);
     }
 
-    public void openAddDishActivity()
+    private void openAddDishActivity()
     {
         Intent intent = new Intent(this, AddDishActivity.class);
         startActivity(intent);
     }
 
-    public void openGetAllDishesActivity()
+    private void openGetAllDishesActivity()
     {
         Intent intent = new Intent(this, GetAllDishesActivity.class);
         startActivity(intent);
     }
 
-    public void openGetAllDishCategoriesActivity()
+    private void openGetAllDishCategoriesActivity()
     {
         Intent intent = new Intent(this, GetAllDishCategoriesActivity.class);
         startActivity(intent);
     }
 
-    public void setGetAllDishesButtonListener()
+    private void setGetAllDishesButtonListener()
     {
         getAllDishesButton.setOnClickListener(new OnClickListener()
         {
@@ -90,7 +90,7 @@ public class DieticianViewActivity extends AppCompatActivity
         });
     }
 
-    public void setGetAllDishCategoriesButtonListener()
+    private void setGetAllDishCategoriesButtonListener()
     {
         getAllDishCategoriesButton.setOnClickListener(new OnClickListener()
         {

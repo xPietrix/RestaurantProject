@@ -22,7 +22,7 @@ public class AdminViewActivity extends AppCompatActivity
         setAddUserButtonListener();
     }
 
-    public void setAddUserButtonListener()
+    private void setAddUserButtonListener()
     {
         addUserButton.setOnClickListener(new View.OnClickListener()
         {
@@ -34,7 +34,7 @@ public class AdminViewActivity extends AppCompatActivity
         });
     }
 
-    public void openAddUserActivity()
+    private void openAddUserActivity()
     {
         Intent intent = new Intent(this, AddUserActivity.class);
         startActivity(intent);

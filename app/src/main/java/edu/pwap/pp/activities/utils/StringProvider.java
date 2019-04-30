@@ -41,7 +41,7 @@ public class StringProvider
         return content;
     }
 
-    public static String getAllPreparedOrdersString(List<Order> ordersToDeliver)
+    public static String getAllOrdersToPrepareOrDeliverString(List<Order> ordersToDeliver)
     {
         String content = "";
 

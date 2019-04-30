@@ -66,7 +66,7 @@ public class AddDishActivity extends AppCompatActivity
         });
     }
 
-    public void addDishToDatabase(Dish dish)
+    private void addDishToDatabase(Dish dish)
     {
         DishApi api = RetrofitInitializer.getClient().create(DishApi.class);
         DishService dishService = new DishService(new DishRepository());

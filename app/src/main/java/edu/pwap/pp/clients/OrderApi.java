@@ -21,7 +21,7 @@ public interface OrderApi
     Single<List<Order>> getOrdersToDeliver();
 
     @POST("order/prepare/{id}")
-    Single<Integer> addOrderToPrepare(@Path("id") String id);
+    Single<Order> prepareOrder(@Path("id") long id);
 
     @POST("order/delivery/{id}")
     Single<Order> deliverOrder(@Path("id") long id);

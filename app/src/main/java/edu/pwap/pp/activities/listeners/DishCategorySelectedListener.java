@@ -11,7 +11,7 @@ public class DishCategorySelectedListener extends CustomListener
     {
         this.selectedItem = parent.getItemAtPosition(position).toString();
 
-        Toast.makeText(parent.getContext(),"Selected role: " + parent.getItemAtPosition(position).toString(),
+        Toast.makeText(parent.getContext(),"Selected category: " + parent.getItemAtPosition(position).toString(),
                 Toast.LENGTH_SHORT).show();
     }
 

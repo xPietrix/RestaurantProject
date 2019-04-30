@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,16 +15,14 @@ import android.view.View.OnClickListener;
 
 import edu.pwap.pp.R;
 import edu.pwap.pp.activities.listeners.RoleSelectedListener;
+import edu.pwap.pp.clients.UserApi;
 import edu.pwap.pp.models.User;
+import edu.pwap.pp.network.RetrofitInitializer;
 import edu.pwap.pp.repositories.UserRepository;
 import edu.pwap.pp.services.UserService;
 
 public class AddUserActivity extends AppCompatActivity
 {
-    private TextView addingUserTextView;
-    private TextView userNameTextView;
-    private TextView passwordTextView;
-    private TextView roleTextView;
     private EditText userNameText;
     private EditText passwordText;
     private Button addButton;
@@ -38,13 +35,9 @@ public class AddUserActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        addingUserTextView = findViewById(R.id.textViewAddingUser);
-        userNameTextView = findViewById(R.id.textViewUsername);
-        passwordTextView = findViewById(R.id.textViewPassword);
         userNameText = findViewById(R.id.editTextUsername);
         passwordText = findViewById(R.id.editTextPassword);
         addButton = findViewById(R.id.buttonAddUser);
-        roleTextView = findViewById(R.id.textViewRole);
         roleSpinner = findViewById(R.id.roleSpinner);
 
         listener = new RoleSelectedListener();
@@ -52,12 +45,6 @@ public class AddUserActivity extends AppCompatActivity
         addItemsOnSpinner();
         setAddButtonListener();
         addListenerOnSpinnerItemSelection();
-    }
-
-    public void addUser(String role, User user)
-    {
-        UserService userService = new UserService(new UserRepository());
-        userService.addUser(role, user);
     }
 
     public void addItemsOnSpinner()
@@ -73,11 +60,6 @@ public class AddUserActivity extends AppCompatActivity
         roleSpinner.setAdapter(dataAdapter);
     }
 
-    public void addListenerOnSpinnerItemSelection()
-    {
-        roleSpinner.setOnItemSelectedListener(listener);
-    }
-
     public void setAddButtonListener()
     {
         addButton.setOnClickListener(new OnClickListener()
@@ -89,11 +71,23 @@ public class AddUserActivity extends AppCompatActivity
                 String password = passwordText.getText().toString();
                 String selectedRole = listener.getSelectedRole();
                 User userToAdd = new User(username, password);
-                addUser(selectedRole, userToAdd);
+                addUserToDatabase(selectedRole, userToAdd);
                 Toast.makeText(v.getContext(),"User added to database", Toast.LENGTH_SHORT).show();
                 userNameText.setText("");
                 passwordText.setText("");
             }
         });
+    }
+
+    public void addListenerOnSpinnerItemSelection()
+    {
+        roleSpinner.setOnItemSelectedListener(listener);
+    }
+
+    public void addUserToDatabase(String role, User user)
+    {
+        UserApi api = RetrofitInitializer.getClient().create(UserApi.class);
+        UserService userService = new UserService(new UserRepository());
+        userService.addUser(api, role, user);
     }
 }

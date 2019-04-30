@@ -8,8 +8,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import edu.pwap.pp.R;
+import edu.pwap.pp.clients.DishApi;
 import edu.pwap.pp.models.Dish;
 import edu.pwap.pp.models.DishCategory;
+import edu.pwap.pp.network.RetrofitInitializer;
 import edu.pwap.pp.repositories.DishRepository;
 import edu.pwap.pp.services.DishService;
 
@@ -38,12 +40,6 @@ public class AddDishActivity extends AppCompatActivity
         setAddDishButtonListener();
     }
 
-    public void addDish(Dish dish)
-    {
-        DishService dishService = new DishService(new DishRepository());
-        dishService.addDish(dish);
-    }
-
     public void setAddDishButtonListener()
     {
         addDishToDBButton.setOnClickListener(new View.OnClickListener()
@@ -59,8 +55,7 @@ public class AddDishActivity extends AppCompatActivity
 
                 DishCategory dishCategory = new DishCategory(categoryId, categoryName);
                 Dish dish = new Dish(name, price, estimatedPrepTime, dishCategory);
-                addDish(dish);
-
+                addDishToDatabase(dish);
                 Toast.makeText(v.getContext(),"Dish added to database", Toast.LENGTH_SHORT).show();
                 dishNameText.setText("");
                 dishPriceText.setText("");
@@ -69,5 +64,12 @@ public class AddDishActivity extends AppCompatActivity
                 dishCategoryNameText.setText("");
             }
         });
+    }
+
+    public void addDishToDatabase(Dish dish)
+    {
+        DishApi api = RetrofitInitializer.getClient().create(DishApi.class);
+        DishService dishService = new DishService(new DishRepository());
+        dishService.addDishToDatabase(dish, api);
     }
 }

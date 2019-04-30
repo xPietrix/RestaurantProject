@@ -47,4 +47,16 @@
     <string name="tVDishCategoryName">Dish category name</string>
     <string name="tVChooseDishCategory">Choose dish category</string>
     <string name="buttonShowDishesWithCategory">SHOW</string>
+    <string name="waiterButtonText">WAITER</string>
+    <string name="tVWaiterView">WAITER VIEW</string>
+    <string name="showPreparedOrdersButtonText">SHOW PREPARED ORDERS</string>
+    <string name="tVPreparedOrdersText">ORDERS READY TO DELIVER</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_title_home">Notes</string>
+    <string name="msg_no_notes">No notes found!</string>
+    <string name="lbl_new_note_title">New Note</string>
+    <string name="hint_enter_note">Enter your note!</string>
+    <string name="appbar_scrolling_view_behavior">xd</string>
+    <string name="lbl_edit_note_title">Edit your note</string>
+    <string name="buttonDeliverOrderText">DELIVER ORDER</string>
 </resources>

@@ -1,31 +1,39 @@
 package edu.pwap.pp.repositories;
 
-import edu.pwap.pp.dataGetters.ConnectionInitializer;
+import android.util.Log;
+
+import edu.pwap.pp.clients.UserApi;
 import edu.pwap.pp.models.User;
-import retrofit2.Call;
-import retrofit2.Callback;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.observers.DisposableSingleObserver;
+import io.reactivex.schedulers.Schedulers;
 
 public class UserRepository
 {
-    private ConnectionInitializer connectionInitializer;
-
-    public UserRepository()
+    public void addUser(UserApi api, String role, User user)
     {
-        connectionInitializer = new ConnectionInitializer();
-    }
+        api.addUserToDatabase(role, user)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<User>()
+                {
+                    @Override
+                    public void onSuccess(User user)
+                    {
 
-    public void addUser(String role, User user)
-    {
-        Call<User> call = connectionInitializer.getAddUserCall(role, user);
-        Callback<User> addDataCallback = connectionInitializer.setUserCallback();
-        call.enqueue(addDataCallback);
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                    }
+                });
     }
 
     public void login(User user)
     {
-        Call<User> call = connectionInitializer.getLoginCall(user);
-        Callback<User> loginCallback = connectionInitializer.setUserCallback();
-        call.enqueue(loginCallback);
+        // TODO
     }
 }
 

@@ -1,22 +1,23 @@
 package edu.pwap.pp.repositories;
 
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import edu.pwap.pp.dataGetters.ConnectionInitializer;
-import edu.pwap.pp.models.Dish;
+import edu.pwap.pp.activities.GetAllDishCategoriesActivity;
+import edu.pwap.pp.clients.DishCategoryApi;
 import edu.pwap.pp.models.DishCategory;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.observers.DisposableSingleObserver;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DishCategoryRepository
 {
-    private ConnectionInitializer connectionInitializer;
-
-    public DishCategoryRepository()
-    {
-        this.connectionInitializer = new ConnectionInitializer();
-    }
+    private List<DishCategory> dishCategoriesList;
 
     public String getDishCategoriesString(Response<List<DishCategory>> response)
     {
@@ -35,23 +36,48 @@ public class DishCategoryRepository
         return content;
     }
 
-    public Call<DishCategory> getDishCategory(long id)
+    public List<DishCategory> getAllDishCategories(DishCategoryApi service)
     {
-        Call<DishCategory> call = connectionInitializer.getDishCategoryCall(id);
+        service.getAllDishCategories()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new DisposableSingleObserver<List<DishCategory>>()
+            {
+                @Override
+                public void onSuccess(List<DishCategory> categories)
+                {
+                    dishCategoriesList = new ArrayList<>(categories);
+                    GetAllDishCategoriesActivity.changeTextView(dishCategoriesList);
+                }
 
-        return call;
+                @Override
+                public void onError(Throwable e)
+                {
+                    Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                }
+            });
+
+        return dishCategoriesList;
     }
 
-    public Call<List<DishCategory>> getAllDishCategories()
+    public void addDishCategoryToDatabase(DishCategory dishCategory, DishCategoryApi api)
     {
-        Call<List<DishCategory>> call = connectionInitializer.getDishCategoriesCall();
-        return call;
-    }
+        api.addDishCategoryToDatabase(dishCategory)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<DishCategory>()
+                {
+                    @Override
+                    public void onSuccess(DishCategory categories)
+                    {
 
-    public void addDishCategory(DishCategory dishCategory)
-    {
-        Call<DishCategory> call = connectionInitializer.getAddDishCategoryCall(dishCategory);
-        Callback<DishCategory> dishCategoryCallback = connectionInitializer.setAddDishCategoryCallback();
-        call.enqueue(dishCategoryCallback);
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                    }
+                });
     }
 }

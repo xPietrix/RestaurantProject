@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.GetAllDishesActivity">
+
+        <TextView
+            android:id="@+id/textViewAllDishes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tVDishesListText"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textViewChooseDishCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tVChooseDishCategory"/>
+
+        <Spinner
+            android:id="@+id/spinnerDishCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/showDishesToOrderWithCategoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buttonShowDishesWithCategory" />
+
+        <TextView
+            android:id="@+id/textViewAllDishesToOrderList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/buttonOpenMakeOrderView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buttonOpenMakeOrderText" />
+
+    </LinearLayout>
+
+</ScrollView>

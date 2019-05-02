@@ -50,9 +50,10 @@ public class GetOrdersToDeliverActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                long orderId = 1;
+                long orderId = 4;
                 deliverOrder(orderId);
                 Toast.makeText(v.getContext(),"Order delivered", Toast.LENGTH_SHORT).show();
+                getOrdersToDeliver();
             }
         });
     }
@@ -66,6 +67,6 @@ public class GetOrdersToDeliverActivity extends AppCompatActivity
 
     public static void changeTextView(List<Order> preparedOrders)
     {
-        tVOrdersToDeliver.append(StringProvider.getAllOrdersToPrepareOrDeliverString(preparedOrders));
+        tVOrdersToDeliver.setText(StringProvider.getAllOrdersToPrepareOrDeliverString(preparedOrders));
     }
 }

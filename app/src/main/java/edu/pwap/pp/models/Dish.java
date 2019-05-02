@@ -18,6 +18,15 @@ public class Dish
         this.dishCategory = dishCategory;
     }
 
+    public Dish(long id, String dishName, double dishPrice, long estimatedPreparationTime, DishCategory dishCategory)
+    {
+        this.id = id;
+        this.dishName = dishName;
+        this.dishPrice = dishPrice;
+        this.estimatedPreparationTime = estimatedPreparationTime;
+        this.dishCategory = dishCategory;
+    }
+
     public long getId() {
         return id;
     }

@@ -62,11 +62,28 @@ public class StringProvider
                 content = content + dish.getDishName() + "\n";
                 content = content + dish.getDishPrice() + "\n";
                 content = content + dish.getEstimatedPreparationTime()+ "\n";
-                content = content + "/n";
+                content = content + "\n";
             }
-            content = content + "/n";
+            content = content + "\n";
         }
 
         return content;
     }
+
+    public static String getDishString(Dish dish)
+    {
+        String content = "";
+
+        content = content + "\n";
+        content = content + "ID: " + dish.getId() + "\n";
+        content = content + "Dish name: " + dish.getDishName() + "\n";
+        content = content + "Dish price: " + dish.getDishPrice() + "\n";
+        content = content + "Estimated preparation time: " + dish.getEstimatedPreparationTime() + "\n";
+        //content = content + "Dish category id: " + dish.getDishCategory().getId() + "\n";
+        content = content + "Dish category name: " + dish.getDishCategory().getCategoryName() + "\n";
+        content = content + "\n";
+
+        return content;
+    }
+
 }

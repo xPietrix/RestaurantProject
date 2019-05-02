@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     private Button dieticianButton;
     private Button waiterButton;
     private Button chefButton;
-
+    private Button customerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 openChefViewActivity();
+            }
+        });
+
+        customerButton = findViewById(R.id.customerButton);
+        customerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                openCustomerViewActivity();
             }
         });
 
@@ -128,7 +137,7 @@ public class MainActivity extends AppCompatActivity
         dishes.add(secondDish);
         //addDish(dish);
         //addDish(secondDish);
-        Order order = new Order(1, 100,7, date, 1200, dishes);
+        Order order = new Order(1, 100, 7, date, 1200, dishes);
         Order orderToDeliver = new Order(2, 100,7, date, 1400, dishes);
         //addOrder(orderToDeliver);
         //addOrder(order);
@@ -330,6 +339,12 @@ public class MainActivity extends AppCompatActivity
     private void openChefViewActivity()
     {
         Intent intent = new Intent(this, ChefViewActivity.class);
+        startActivity(intent);
+    }
+
+    private void openCustomerViewActivity()
+    {
+        Intent intent = new Intent(this, CustomerViewActivity.class);
         startActivity(intent);
     }
 }

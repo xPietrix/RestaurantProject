@@ -15,14 +15,19 @@ public class DishService
         this.dishRepository = dishRepository;
     }
 
-    public List<Dish> getDishesWithCategory(String id, DishApi service)
+    public List<Dish> getDishesWithCategory(String id, DishApi api)
     {
-        return this.dishRepository.getDishesWithCategory(id, service);
+        return this.dishRepository.getDishesWithCategory(id, api);
     }
 
-    public void getDishWithId(String id)
+    public List<Dish> getDishesToOrderWithCategory(String id, DishApi api)
     {
-        this.dishRepository.getDishWithId(id);
+        return this.dishRepository.getDishesToOrderWithCategory(id, api);
+    }
+
+    public void getDishWithId(String id, DishApi api)
+    {
+        this.dishRepository.getDishWithId(id, api);
     }
 
     public void addDishToDatabase(Dish dish, DishApi api)

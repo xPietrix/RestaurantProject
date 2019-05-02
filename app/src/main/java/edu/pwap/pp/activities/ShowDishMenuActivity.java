@@ -1,11 +1,13 @@
 package edu.pwap.pp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,29 +23,31 @@ import edu.pwap.pp.network.RetrofitInitializer;
 import edu.pwap.pp.repositories.DishRepository;
 import edu.pwap.pp.services.DishService;
 
-public class GetAllDishesActivity extends AppCompatActivity
+public class ShowDishMenuActivity extends AppCompatActivity
 {
-    private static TextView textViewAllDishesList;
-    private static Spinner dishCategorySpinner;
+    private static TextView tVAllDishesToOrder;
+    private Spinner dishCategorySpinner;
     private DishCategorySelectedListener listener;
-    private Button showDishesWithCategoryButton;
-    private DishService dishService;
+    private Button showDishesButton;
+    private Button openMakeOrderViewButton;
     private List<Dish> dishList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_all_dishes);
+        setContentView(R.layout.activity_show_dish_menu);
 
         dishCategorySpinner = findViewById(R.id.spinnerDishCategory);
-        textViewAllDishesList = findViewById(R.id.textViewAllDishesList);
-        showDishesWithCategoryButton = findViewById(R.id.showDishesWithCategoryButton);
+        showDishesButton = findViewById(R.id.showDishesToOrderWithCategoryButton);
+        tVAllDishesToOrder = findViewById(R.id.textViewAllDishesToOrderList);
+        openMakeOrderViewButton = findViewById(R.id.buttonOpenMakeOrderView);
 
         listener = new DishCategorySelectedListener();
 
         addItemsOnSpinner();
-        setAddButtonListener();
+        setShowDishesButtonListener();
+        setOpenMakeOrderViewButtonListener();
         addListenerOnSpinnerItemSelection();
     }
 
@@ -60,14 +64,9 @@ public class GetAllDishesActivity extends AppCompatActivity
         dishCategorySpinner.setAdapter(dataAdapter);
     }
 
-    private void addListenerOnSpinnerItemSelection()
+    private void setShowDishesButtonListener()
     {
-        dishCategorySpinner.setOnItemSelectedListener(listener);
-    }
-
-    private void setAddButtonListener()
-    {
-        showDishesWithCategoryButton.setOnClickListener(new OnClickListener()
+        showDishesButton.setOnClickListener(new OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -78,15 +77,38 @@ public class GetAllDishesActivity extends AppCompatActivity
         });
     }
 
+    private void addListenerOnSpinnerItemSelection()
+    {
+        dishCategorySpinner.setOnItemSelectedListener(listener);
+    }
+
+    private void setOpenMakeOrderViewButtonListener()
+    {
+        openMakeOrderViewButton.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openMakeOrderActivity();
+            }
+        });
+    }
+
     private void getDishesWithCategory(String dishCategoryId)
     {
         DishApi api = RetrofitInitializer.getClient().create(DishApi.class);
-        dishService = new DishService(new DishRepository());
-        dishList = dishService.getDishesWithCategory(dishCategoryId, api);
+        DishService dishService = new DishService(new DishRepository());
+        dishList = dishService.getDishesToOrderWithCategory(dishCategoryId, api);
     }
 
     public static void changeTextView(List<Dish> list)
     {
-        textViewAllDishesList.setText(StringProvider.dishesWithCategoryString(list));
+        tVAllDishesToOrder.setText(StringProvider.dishesWithCategoryString(list));
+    }
+
+    private void openMakeOrderActivity()
+    {
+        Intent intent = new Intent(this, MakeOrderActivity.class);
+        startActivity(intent);
     }
 }

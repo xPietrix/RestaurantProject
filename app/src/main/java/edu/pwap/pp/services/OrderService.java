@@ -13,9 +13,9 @@ public class OrderService
         this.orderRepository = orderRepository;
     }
 
-    public void addOrder(Order order)
+    public void addOrder(Order order, OrderApi api)
     {
-        this.orderRepository.addOrder(order);
+        this.orderRepository.addOrder(order, api);
     }
 
     public void deliverOrder(long orderId, OrderApi api)

@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 public interface DishApi
 {
     @GET("dish/{id}")
-    Call<Dish> getDishWithId(@Path("id") String id);
+    Single<Dish> getDishWithId(@Path("id") String id);
 
     @GET("dish/category/{id}")
     Single<List<Dish>> getDishesWithCategory(@Path("id") String id);

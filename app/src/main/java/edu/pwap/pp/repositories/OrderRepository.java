@@ -18,9 +18,25 @@ public class OrderRepository
     private List<Order> ordersToDeliverList;
     private List<Order> ordersToPrepareList;
 
-    public void addOrder(Order order)
+    public void addOrder(Order order, OrderApi api)
     {
-        //TODO
+        api.addOrder(order)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableSingleObserver<Order>()
+                {
+                    @Override
+                    public void onSuccess(Order order)
+                    {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+                        Log.d("ERROR", "ERROR WITH ADD ORDER METHOD!");
+                    }
+                });
     }
 
     public void deliverOrder(long id, OrderApi api)

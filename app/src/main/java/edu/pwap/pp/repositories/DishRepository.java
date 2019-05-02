@@ -85,7 +85,7 @@ public class DishRepository
                     @Override
                     public void onError(Throwable e)
                     {
-                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                        Log.d("ERROR", "ERROR WITH GET DISH WITH CATEGORY METHOD!");
                     }
                 });
     }
@@ -106,7 +106,7 @@ public class DishRepository
                     @Override
                     public void onError(Throwable e)
                     {
-                        Log.d("ERROR", "ERROR WITH GET ALL DISH CATEGORIES METHOD!");
+                        Log.d("ERROR", "ERROR WITH ADD DISH TO DATABASE METHOD!");
                     }
                 });
     }

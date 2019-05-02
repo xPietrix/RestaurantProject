@@ -19,23 +19,6 @@ public class DishCategoryRepository
 {
     private List<DishCategory> dishCategoriesList;
 
-    public String getDishCategoriesString(Response<List<DishCategory>> response)
-    {
-        List<DishCategory> dishCategories = response.body();
-
-        String content = "";
-
-        content = content + "\n";
-        for(DishCategory dishCategory: dishCategories)
-        {
-            content = content + "ID: " + dishCategory.getId() + "\n";
-            content = content + "Dish category name: " + dishCategory.getCategoryName() + "\n" + "\n";
-        }
-        content = content + "\n";
-
-        return content;
-    }
-
     public List<DishCategory> getAllDishCategories(DishCategoryApi service)
     {
         service.getAllDishCategories()

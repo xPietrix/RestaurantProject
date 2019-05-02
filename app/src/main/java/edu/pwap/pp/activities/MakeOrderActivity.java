@@ -16,7 +16,6 @@ import edu.pwap.pp.activities.utils.StringProvider;
 import edu.pwap.pp.clients.DishApi;
 import edu.pwap.pp.clients.OrderApi;
 import edu.pwap.pp.models.Dish;
-import edu.pwap.pp.models.DishCategory;
 import edu.pwap.pp.models.Order;
 import edu.pwap.pp.network.RetrofitInitializer;
 import edu.pwap.pp.repositories.DishRepository;

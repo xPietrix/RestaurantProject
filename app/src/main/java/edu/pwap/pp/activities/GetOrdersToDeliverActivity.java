@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,9 @@ import edu.pwap.pp.services.OrderService;
 public class GetOrdersToDeliverActivity extends AppCompatActivity
 {
     private static TextView tVOrdersToDeliver;
+    private EditText eTOrderToDeliverId;
     private Button buttonDeliverOrder;
+    private Button buttonRefreshList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,10 +33,26 @@ public class GetOrdersToDeliverActivity extends AppCompatActivity
         setContentView(R.layout.activity_get_orders_to_deliver);
 
         tVOrdersToDeliver = findViewById(R.id.tVOrdersToDeliver);
+        eTOrderToDeliverId = findViewById(R.id.eTOrderToDeliverId);
         buttonDeliverOrder = findViewById(R.id.buttonDeliverOrder);
+        buttonRefreshList = findViewById(R.id.buttonRefreshOrdersToDeliverList);
 
-        getOrdersToDeliver();
+        setRefreshButtonListener();
         setDeliverButtonListener();
+        getOrdersToDeliver();
+
+    }
+
+    private void setRefreshButtonListener()
+    {
+        buttonRefreshList.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                getOrdersToDeliver();
+            }
+        });
     }
 
     private void getOrdersToDeliver()
@@ -50,9 +69,10 @@ public class GetOrdersToDeliverActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                long orderId = 4;
+                long orderId = Long.parseLong(eTOrderToDeliverId.getText().toString());
                 deliverOrder(orderId);
                 Toast.makeText(v.getContext(),"Order delivered", Toast.LENGTH_SHORT).show();
+                eTOrderToDeliverId.setText("");
                 getOrdersToDeliver();
             }
         });

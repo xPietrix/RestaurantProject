@@ -49,16 +49,16 @@ public class StringProvider
         {
             content = content + "\n";
             content = content + "Order id: " + order.getId() + "\n";
-            content = content + "Total price: " + order.getTotalPrice() + "zł" + "\n";
-            content = content + "Table number: " + order.getTableId() + "\n";
-            content = content + "Order date: " + order.getOrderDate() + "\n";
-            content = content + "Estimated preparation time: " + order.getEstimatedPreparationTime() + "\n";
-
             List<Dish> dishes = order.getDishes();
             for(Dish dish: dishes)
             {
                 content = content + dish.getDishName() + "\n";
             }
+            content = content + "Total price: " + order.getTotalPrice() + "zł" + "\n";
+            content = content + "Table number: " + order.getTableId() + "\n";
+            content = content + "Order date: " + order.getOrderDate() + "\n";
+            content = content + "Estimated preparation time: " + order.getEstimatedPreparationTime() + "\n";
+
         }
 
         return content;

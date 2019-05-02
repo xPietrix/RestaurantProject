@@ -12,7 +12,7 @@
         tools:context=".activities.GetOrdersToDeliverActivity">
 
         <TextView
-            android:id="@+id/textViewPreparedDishes"
+            android:id="@+id/tVOrdersToDeliverTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tVPreparedOrdersText"
@@ -34,11 +34,31 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tVTypeOrderToDeliverNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tVOrderToPrepareIdText" />
+
+        <EditText
+            android:id="@+id/eTOrderToDeliverId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="" />
+
         <Button
             android:id="@+id/buttonDeliverOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/buttonDeliverOrderText" />
+
+        <Button
+            android:id="@+id/buttonRefreshOrdersToDeliverList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buttonRefreshOrdersToDeliverText" />
 
     </LinearLayout>
 

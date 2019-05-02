@@ -76,4 +76,5 @@
     <string name="tVTableNumberText">Type your table number here:</string>
     <string name="tVOrderToPrepareIdText">Type id of order to prepare</string>
     <string name="buttonRefreshListText">REFRESH LIST</string>
+    <string name="buttonRefreshOrdersToDeliverText">REFRESH LIST</string>
 </resources>

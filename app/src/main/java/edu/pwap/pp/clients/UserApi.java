@@ -10,7 +10,7 @@ import retrofit2.http.Path;
 public interface UserApi
 {
     @POST("login")
-    Call<User> loginUser(@Body User user);
+    Single<User> loginUser(@Body User user);
 
     @POST("user/add/{role}")
     Single<User> addUserToDatabase(@Path("role") String role, @Body User user);

@@ -74,4 +74,6 @@
     <string name="tVChosenDishesTitleText">YOUR CHOSEN DISH</string>
     <string name="buttonOpenMakeOrderText">MAKE ORDER</string>
     <string name="tVTableNumberText">Type your table number here:</string>
+    <string name="tVOrderToPrepareIdText">Type id of order to prepare</string>
+    <string name="buttonRefreshListText">REFRESH LIST</string>
 </resources>

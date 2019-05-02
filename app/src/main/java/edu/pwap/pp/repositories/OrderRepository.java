@@ -82,7 +82,7 @@ public class OrderRepository
                 });
     }
 
-    public void prepareOrder(long id, OrderApi api)
+    public void prepareOrder(long id, final OrderApi api)
     {
         api.prepareOrder(id)
                 .subscribeOn(Schedulers.io())
@@ -92,7 +92,7 @@ public class OrderRepository
                     @Override
                     public void onSuccess(Order order)
                     {
-
+                        //getOrdersToPrepare(api);
                     }
 
                     @Override

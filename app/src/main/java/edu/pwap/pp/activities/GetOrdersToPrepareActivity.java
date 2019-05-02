@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +20,10 @@ import edu.pwap.pp.services.OrderService;
 
 public class GetOrdersToPrepareActivity extends AppCompatActivity
 {
+    private EditText eTOrderToPrepareId;
     private static TextView tVOrdersToPrepare;
     private Button buttonPrepareOrder;
+    private Button buttonRefreshOrdersToPrepareList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,12 +33,27 @@ public class GetOrdersToPrepareActivity extends AppCompatActivity
 
         tVOrdersToPrepare = findViewById(R.id.tVOrdersToPrepare);
         buttonPrepareOrder = findViewById(R.id.buttonPrepareOrder);
+        eTOrderToPrepareId = findViewById(R.id.eTOrderToPrepareId);
+        buttonRefreshOrdersToPrepareList = findViewById(R.id.buttonRefreshOrdersToPrepareList);
 
-        getOrdersToPrepare();
+        setRefreshButtonListener();
         setPrepareButtonListener();
+        getOrdersToPrepare();
     }
 
-    private void getOrdersToPrepare()
+    public void setRefreshButtonListener()
+    {
+        buttonRefreshOrdersToPrepareList.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                getOrdersToPrepare();
+            }
+        });
+    }
+
+    public void getOrdersToPrepare()
     {
         OrderApi api = RetrofitInitializer.getClient().create(OrderApi.class);
         OrderService orderService = new OrderService(new OrderRepository());
@@ -49,9 +67,10 @@ public class GetOrdersToPrepareActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                long orderId = 4;
+                long orderId = Long.parseLong(eTOrderToPrepareId.getText().toString());
                 prepareOrder(orderId);
                 Toast.makeText(v.getContext(),"Order prepared", Toast.LENGTH_SHORT).show();
+                eTOrderToPrepareId.setText("");
                 getOrdersToPrepare();
             }
         });

@@ -52,13 +52,15 @@
             android:id="@+id/buttonDeliverOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonDeliverOrderText" />
+            android:text="@string/buttonDeliverOrderText"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/buttonRefreshOrdersToDeliverList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonRefreshOrdersToDeliverText" />
+            android:text="@string/buttonRefreshOrdersToDeliverText"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

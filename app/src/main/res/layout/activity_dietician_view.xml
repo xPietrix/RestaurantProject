@@ -23,25 +23,29 @@
         android:id="@+id/addDishCategoryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addDishCategoryButton" />
+        android:text="@string/addDishCategoryButton"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/addDishButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addNewDishText" />
+        android:text="@string/addNewDishText"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/getAllDishesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/showAllDishesText" />
+        android:text="@string/showAllDishesText"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/getAllDishCategoriesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/showAllDishCategoriesText" />
+        android:text="@string/showAllDishCategoriesText"
+        android:textSize="20sp" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

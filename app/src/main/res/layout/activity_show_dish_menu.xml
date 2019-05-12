@@ -33,7 +33,8 @@
             android:id="@+id/showDishesToOrderWithCategoryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonShowDishesWithCategory" />
+            android:text="@string/buttonShowDishesWithCategory"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textViewAllDishesToOrderList"
@@ -45,7 +46,8 @@
             android:id="@+id/buttonOpenMakeOrderView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonOpenMakeOrderText" />
+            android:text="@string/buttonOpenMakeOrderText"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

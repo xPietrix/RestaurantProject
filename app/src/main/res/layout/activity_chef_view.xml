@@ -23,6 +23,7 @@
         android:id="@+id/buttonCheckOrders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonCheckOrdersText" />
+        android:text="@string/buttonCheckOrdersText"
+        android:textSize="20sp" />
 
 </LinearLayout>

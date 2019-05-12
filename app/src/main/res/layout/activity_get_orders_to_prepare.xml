@@ -54,13 +54,15 @@
             android:id="@+id/buttonPrepareOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonPrepareOrderText" />
+            android:text="@string/buttonPrepareOrderText"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/buttonRefreshOrdersToPrepareList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonRefreshListText" />
+            android:text="@string/buttonRefreshListText"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

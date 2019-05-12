@@ -44,7 +44,8 @@
             android:id="@+id/buttonAddDishToOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonAddDishToOrderText" />
+            android:text="@string/buttonAddDishToOrderText"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tVChosenDishesTitle"
@@ -63,7 +64,8 @@
             android:id="@+id/addOrderButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buttonAddOrderText" />
+            android:text="@string/buttonAddOrderText"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

@@ -11,6 +11,7 @@ import edu.pwap.pp.R;
 public class CustomerViewActivity extends AppCompatActivity
 {
     private Button makeOrderButton;
+    private Button makeDishOrderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,7 +21,10 @@ public class CustomerViewActivity extends AppCompatActivity
 
         makeOrderButton = findViewById(R.id.makeOrderButton);
 
+        makeDishOrderButton = findViewById(R.id.makeDishOrderButton);
+
         setMakeOrderButtonListener();
+        setMakeDishOrderButtonListener();
     }
 
     private void setMakeOrderButtonListener()
@@ -35,9 +39,27 @@ public class CustomerViewActivity extends AppCompatActivity
         });
     }
 
+    private void setMakeDishOrderButtonListener()
+    {
+        makeDishOrderButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openMakeDishOrderView();
+            }
+        });
+    }
+
     private void openShowDishMenuView()
     {
         Intent intent = new Intent(this, ShowDishMenuActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMakeDishOrderView()
+    {
+        Intent intent = new Intent(this, MakeDishOrder.class);
         startActivity(intent);
     }
 }

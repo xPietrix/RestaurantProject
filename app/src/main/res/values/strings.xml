@@ -53,11 +53,11 @@
     <string name="tVPreparedOrdersText">ORDERS READY TO DELIVER</string>
     <string name="action_settings">Settings</string>
     <string name="activity_title_home">Notes</string>
-    <string name="msg_no_notes">No notes found!</string>
-    <string name="lbl_new_note_title">New Note</string>
+    <string name="msg_no_dishes">No dishes found!</string>
+    <string name="lbl_yes_order_dish">Yes</string>
     <string name="hint_enter_note">Enter your note!</string>
-    <string name="appbar_scrolling_view_behavior">xd</string>
-    <string name="lbl_edit_note_title">Edit your note</string>
+    <string name="appbar_scrolling_view_behavior">scrolling view</string>
+    <string name="lbl_dont_order_dish">No</string>
     <string name="buttonDeliverOrderText">DELIVER ORDER</string>
     <string name="tVChefViewText">CHEF VIEW</string>
     <string name="buttonCheckOrdersText">CHECK ORDERS</string>
@@ -77,4 +77,7 @@
     <string name="tVOrderToPrepareIdText">Type id of order to prepare</string>
     <string name="buttonRefreshListText">REFRESH LIST</string>
     <string name="buttonRefreshOrdersToDeliverText">REFRESH LIST</string>
+    <string name="make_dish_order_button_text">MAKE DISH ORDER</string>
+    <string name="test">TEST</string>
+    <string name="dishes_toolbar_text">DISHES</string>
 </resources>

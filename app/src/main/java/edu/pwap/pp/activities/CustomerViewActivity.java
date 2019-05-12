@@ -10,7 +10,6 @@ import edu.pwap.pp.R;
 
 public class CustomerViewActivity extends AppCompatActivity
 {
-    private Button makeOrderButton;
     private Button makeDishOrderButton;
 
     @Override
@@ -19,24 +18,8 @@ public class CustomerViewActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_view);
 
-        makeOrderButton = findViewById(R.id.makeOrderButton);
-
         makeDishOrderButton = findViewById(R.id.makeDishOrderButton);
-
-        setMakeOrderButtonListener();
         setMakeDishOrderButtonListener();
-    }
-
-    private void setMakeOrderButtonListener()
-    {
-        makeOrderButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openShowDishMenuView();
-            }
-        });
     }
 
     private void setMakeDishOrderButtonListener()
@@ -49,12 +32,6 @@ public class CustomerViewActivity extends AppCompatActivity
                 openMakeDishOrderView();
             }
         });
-    }
-
-    private void openShowDishMenuView()
-    {
-        Intent intent = new Intent(this, ShowDishMenuActivity.class);
-        startActivity(intent);
     }
 
     private void openMakeDishOrderView()

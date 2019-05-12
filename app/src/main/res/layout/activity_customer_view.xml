@@ -21,13 +21,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/makeOrderButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonMakeOrderText"
-        android:textSize="20sp" />
-
-    <Button
         android:id="@+id/makeDishOrderButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

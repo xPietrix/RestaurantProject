@@ -58,7 +58,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/eTEstimatedPrepTime" />
-
+<!--
     <TextView
         android:id="@+id/textViewDishCategoryId"
         android:layout_width="match_parent"
@@ -85,7 +85,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="" />
+        android:text="" /> -->
+
+    <Button
+        android:id="@+id/addDishDishCategoryChooseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose category"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/buttonAddDishToDB"

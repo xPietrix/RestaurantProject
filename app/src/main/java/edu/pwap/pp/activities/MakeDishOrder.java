@@ -192,7 +192,10 @@ public class MakeDishOrder extends AppCompatActivity
                 String selectedItemTag = v.getTag().toString();
                 Toast.makeText(mContext, "Dish Category ID is: " + selectedItemTag, Toast.LENGTH_SHORT).show();
 
-                getAllDishesWithCategory(selectedItemTag);
+                if(selectedItemTag != null)
+                {
+                    getAllDishesWithCategory(selectedItemTag);
+                }
             }
         };
     }
@@ -211,9 +214,9 @@ public class MakeDishOrder extends AppCompatActivity
         return popupWindow;
     }
 
-    private ArrayAdapter<String> categoriesAdapter(String dogsArray[])
+    private ArrayAdapter<String> categoriesAdapter(String categories[])
     {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dogsArray) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 String item = getItem(position);

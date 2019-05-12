@@ -18,22 +18,11 @@
         android:text="@string/getAllDishesText"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/textViewChooseDishCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tVChooseDishCategory"/>
-
-    <Spinner
-        android:id="@+id/spinnerDishCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <Button
-        android:id="@+id/showDishesWithCategoryButton"
+        android:id="@+id/getDishesDishCategoryChooseButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonShowDishesWithCategory"
+        android:text="CHOOSE DISH CATEGORY"
         android:textSize="20sp" />
 
     <TextView

@@ -18,7 +18,7 @@
         <activity android:name=".activities.GetOrdersToPrepareActivity" />
         <activity android:name=".activities.ChefViewActivity" />
         <activity android:name=".activities.GetOrdersToDeliverActivity" />
-        <activity android:name=".activities.GetAllDishCategoriesActivity" />
+        <activity android:name=".activities.GetCategoriesActivity" />
         <activity android:name=".activities.GetAllDishesActivity" />
         <activity android:name=".activities.AddDishActivity" />
         <activity android:name=".activities.CustomerViewActivity" />

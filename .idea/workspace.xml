@@ -31,15 +31,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/CustomerViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/CustomerViewActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeOrderActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/ShowDishMenuActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/repositories/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/repositories/DishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/services/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/services/DishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_dish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_dish.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_customer_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_customer_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/DieticianViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/DieticianViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishCategoriesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetCategoriesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/repositories/DishCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/repositories/DishCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dish_categories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dish_categories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
-              <caret line="218" column="117" selection-start-line="218" selection-start-column="117" selection-end-line="218" selection-end-column="117" />
+            <state relative-caret-position="186">
+              <caret line="196" column="62" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4472#4473#0" expanded="true" />
@@ -76,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="223" column="50" selection-start-line="223" selection-start-column="50" selection-end-line="223" selection-end-column="50" />
+            <state relative-caret-position="1255">
+              <caret line="265" column="9" selection-start-line="265" selection-start-column="9" selection-end-line="265" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4544#4821#0" expanded="true" />
@@ -110,6 +107,34 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="46" selection-end-column="34" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-329">
+              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1482#1490#0" expanded="true" />
+                <element signature="e#3399#3683#0" expanded="true" />
+                <element signature="e#3682#3683#0" expanded="true" />
+                <element signature="e#3782#4879#0" expanded="true" />
+                <element signature="e#4878#4879#0" expanded="true" />
+                <element signature="e#5578#5586#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -154,12 +179,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllOrdersToDeliverActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/clients/OrderApi.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/CustomerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/services/OrderService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/models/Dish.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/clients/DishApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/repositories/OrderRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetOrdersToPrepareActivity.java" />
@@ -174,7 +195,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_admin_view_actitivity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_chef_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_dietician_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_get_orders_to_deliver.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_get_orders_to_prepare.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_loging.xml" />
@@ -204,7 +224,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/services/DishService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_dish.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishCategoriesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllCategoriesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetCategoriesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml" />
       </list>
     </option>
   </component>
@@ -402,7 +427,7 @@
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Build Variants" order="5" sideWeight="0.50133336" side_tool="true" weight="0.21376519" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49866667" visible="true" weight="0.21619433" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49866667" visible="true" weight="0.21619433" />
       <window_info id="Captures" order="7" sideWeight="0.50133336" side_tool="true" weight="0.21376519" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.71902835" weight="0.3179396" />
@@ -410,11 +435,11 @@
       <window_info anchor="bottom" id="Debug" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.9431616" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.34736842" side_tool="true" visible="true" weight="0.30373" />
-      <window_info active="true" anchor="bottom" id="Build" order="6" sideWeight="0.6526316" visible="true" weight="0.30373" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5020243" side_tool="true" visible="true" weight="0.26110125" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.6526316" weight="0.30373" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.3285968" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.94671404" />
-      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49878544" weight="0.72646534" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.4979757" weight="0.72646534" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -495,10 +520,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dish_categories.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_waiter_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -548,31 +569,11 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishCategoriesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/network/RetrofitInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -636,14 +637,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="36" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/listeners/DishCategorySelectedListener.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -806,6 +799,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dish_categories.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetCategoriesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1255">
+          <caret line="265" column="9" selection-start-line="265" selection-start-column="9" selection-end-line="265" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4544#4821#0" expanded="true" />
+            <element signature="e#4820#4821#0" expanded="true" />
+            <element signature="e#4908#5998#0" expanded="true" />
+            <element signature="e#5997#5998#0" expanded="true" />
+            <element signature="e#6692#6700#0" expanded="true" />
+            <element signature="e#1513#2622#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="196" column="62" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4472#4473#0" expanded="true" />
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#7491#7768#0" expanded="true" />
+            <element signature="e#7767#7768#0" expanded="true" />
+            <element signature="e#7855#8855#0" expanded="true" />
+            <element signature="e#8854#8855#0" expanded="true" />
+            <element signature="e#12449#12748#0" expanded="true" />
+            <element signature="e#12747#12748#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_make_dish_order.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -822,40 +868,29 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/MakeDishOrder.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/GetAllDishesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="218" column="117" selection-start-line="218" selection-start-column="117" selection-end-line="218" selection-end-column="117" />
+        <state relative-caret-position="-329">
+          <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4472#4473#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
-            <element signature="e#7491#7768#0" expanded="true" />
-            <element signature="e#7767#7768#0" expanded="true" />
-            <element signature="e#7855#8855#0" expanded="true" />
-            <element signature="e#8854#8855#0" expanded="true" />
-            <element signature="e#12449#12748#0" expanded="true" />
-            <element signature="e#12747#12748#0" expanded="true" />
+            <element signature="e#1482#1490#0" expanded="true" />
+            <element signature="e#3399#3683#0" expanded="true" />
+            <element signature="e#3682#3683#0" expanded="true" />
+            <element signature="e#3782#4879#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#5578#5586#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/pwap/pp/activities/AddDishActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_all_dishes.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="223" column="50" selection-start-line="223" selection-start-column="50" selection-end-line="223" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4544#4821#0" expanded="true" />
-            <element signature="e#4820#4821#0" expanded="true" />
-            <element signature="e#4908#5998#0" expanded="true" />
-            <element signature="e#5997#5998#0" expanded="true" />
-            <element signature="e#6692#6700#0" expanded="true" />
-            <element signature="e#1513#2622#0" expanded="true" />
-            <element signature="e#2621#2622#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-68">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

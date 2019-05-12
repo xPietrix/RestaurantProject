@@ -5,15 +5,12 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.pwap.pp.activities.GetAllDishCategoriesActivity;
+import edu.pwap.pp.activities.GetCategoriesActivity;
 import edu.pwap.pp.clients.DishCategoryApi;
 import edu.pwap.pp.models.DishCategory;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class DishCategoryRepository
 {
@@ -30,7 +27,7 @@ public class DishCategoryRepository
                 public void onSuccess(List<DishCategory> categories)
                 {
                     dishCategoriesList = new ArrayList<>(categories);
-                    GetAllDishCategoriesActivity.changeTextView(dishCategoriesList);
+                    GetCategoriesActivity.changeTextView(dishCategoriesList);
                 }
 
                 @Override

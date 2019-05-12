@@ -75,7 +75,7 @@ public class DieticianViewActivity extends AppCompatActivity
 
     private void openGetAllDishCategoriesActivity()
     {
-        Intent intent = new Intent(this, GetAllDishCategoriesActivity.class);
+        Intent intent = new Intent(this, GetCategoriesActivity.class);
         startActivity(intent);
     }
 

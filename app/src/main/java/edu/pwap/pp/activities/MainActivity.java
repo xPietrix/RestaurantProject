@@ -13,7 +13,6 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity
 {
     private TextView textView;
-    long id = 2;
     private Button adminButton;
     private Button dieticianButton;
     private Button waiterButton;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view_result);
-        textView.setText("CHOOSE YOUR ROLE:");
 
         adminButton = findViewById(R.id.adminButton);
         adminButton.setOnClickListener(new OnClickListener()
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openAdminViewActivity();
+                openAddUserActivity();
             }
         });
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openWaiterViewActivity();
+                openOrdersToDeliverActivity();
             }
         });
 
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openChefViewActivity();
+                openOrdersToPrepareActivity();
             }
         });
 
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openCustomerViewActivity();
+                openMakeDishOrderActivity();
             }
         });
     }
@@ -88,33 +86,33 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    private void openAdminViewActivity()
-    {
-        Intent intent = new Intent(this, AdminViewActivity.class);
-        startActivity(intent);
-    }
-
     private void openDieticianViewActivity()
     {
         Intent intent = new Intent(this, DieticianViewActivity.class);
         startActivity(intent);
     }
 
-    private void openWaiterViewActivity()
+    private void openAddUserActivity()
     {
-        Intent intent = new Intent(this, WaiterViewActivity.class);
+        Intent intent = new Intent(this, AddUserActivity.class);
         startActivity(intent);
     }
 
-    private void openChefViewActivity()
+    private void openMakeDishOrderActivity()
     {
-        Intent intent = new Intent(this, ChefViewActivity.class);
+        Intent intent = new Intent(this, MakeDishOrder.class);
         startActivity(intent);
     }
 
-    private void openCustomerViewActivity()
+    private void openOrdersToPrepareActivity()
     {
-        Intent intent = new Intent(this, CustomerViewActivity.class);
+        Intent intent = new Intent(this, GetOrdersToPrepareActivity.class);
+        startActivity(intent);
+    }
+
+    private void openOrdersToDeliverActivity()
+    {
+        Intent intent = new Intent(this, GetOrdersToDeliverActivity.class);
         startActivity(intent);
     }
 }

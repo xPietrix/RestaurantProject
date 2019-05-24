@@ -1,65 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@color/backgroundColor"
     tools:context=".activities.AddUserActivity">
-
-    <TextView
-        android:id="@+id/textViewAddingUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewAddingUser"
-        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textViewUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/textViewUsername" />
 
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
+        android:paddingBottom="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/editTextUsername" />
 
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/textViewPassword" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName|textPassword"
+        android:paddingBottom="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:inputType="textPassword"
         android:text="@string/editTextPassword" />
 
     <TextView
         android:id="@+id/textViewRole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/textViewRole" />
 
     <Spinner
         android:id="@+id/roleSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"/>
 
     <Button
         android:id="@+id/buttonAddUser"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="@string/buttonAddUser"
-        android:textSize="20sp" />
+        android:layout_marginTop="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/buttonAddUser" />
 
 
 </LinearLayout>

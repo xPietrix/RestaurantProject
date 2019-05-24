@@ -4,36 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".activities.AddDishCategoryActivity"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".activities.AddDishCategoryActivity">
-
-    <TextView
-        android:id="@+id/textViewAddingDishCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tvAddingDishCategory"
-        android:textSize="24sp" />
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/textViewDishCategoryName"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/tvDishCategoryName" />
 
     <EditText
         android:id="@+id/editTextDishCategoryName"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_vertical"
         android:inputType="textPersonName"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/eTDishCategoryName" />
 
     <Button
         android:id="@+id/buttonAddDishCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="@string/buttonAddDishCategory"
-        android:textSize="20sp" />
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"/>
 
 </LinearLayout>

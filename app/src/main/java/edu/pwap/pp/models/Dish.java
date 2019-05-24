@@ -1,6 +1,8 @@
 package edu.pwap.pp.models;
 
-public class Dish
+import java.io.Serializable;
+
+public class Dish implements Serializable
 {
     private long id;
     private String dishName;

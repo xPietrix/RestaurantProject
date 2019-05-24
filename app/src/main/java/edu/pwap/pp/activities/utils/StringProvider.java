@@ -12,11 +12,12 @@ public class StringProvider
     {
         String content = "";
 
+        content = content + "================================" + "\n" + "\n";
         for(DishCategory dishCategory: categories)
         {
             content = content + "ID: " + dishCategory.getId() + "\n";
             content = content + "Category name: " + dishCategory.getCategoryName() + "\n";
-            content = content + "\n";
+            content = content + "\n" + "================================" + "\n" + "\n";
         }
 
         return content;
@@ -26,7 +27,7 @@ public class StringProvider
     {
         String content = "";
 
-        content = content + "\n";
+        content = content + "\n" + "================================" + "\n" + "\n";
         for(Dish dish: dishes)
         {
             content = content + "ID: " + dish.getId() + "\n";
@@ -35,7 +36,7 @@ public class StringProvider
             content = content + "Estimated preparation time: " + dish.getEstimatedPreparationTime() + "\n";
             content = content + "Dish category id: " + dish.getDishCategory().getId() + "\n";
             content = content + "Dish category name: " + dish.getDishCategory().getCategoryName() + "\n";
-            content = content + "\n";
+            content = content + "\n" + "================================" + "\n" + "\n";
         }
         content = content + "\n";
         return content;
@@ -45,6 +46,7 @@ public class StringProvider
     {
         String content = "";
 
+        content = content + "\n" + "================================" + "\n" + "\n";
         for(Order order: ordersToDeliver)
         {
             content = content + "\n";
@@ -58,7 +60,7 @@ public class StringProvider
             content = content + "Table number: " + order.getTableId() + "\n";
             content = content + "Order date: " + order.getOrderDate() + "\n";
             content = content + "Estimated preparation time: " + order.getEstimatedPreparationTime() + "\n";
-
+            content = content + "\n" + "================================" + "\n" + "\n";
         }
 
         return content;

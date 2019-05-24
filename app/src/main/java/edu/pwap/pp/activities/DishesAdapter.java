@@ -1,9 +1,6 @@
 package edu.pwap.pp.activities;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,11 +63,11 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Dish dish = dishesList.get(position);
 
-        holder.dishId.setText(Long.toString(dish.getId()));
-        holder.dishName.setText(dish.getDishName());
-        holder.dishPrice.setText(Double.toString(dish.getDishPrice()));
-        holder.dishPreparationTime.setText(Long.toString(dish.getEstimatedPreparationTime()));
-        holder.dishCategoryName.setText(dish.getDishCategory().getCategoryName());
+        holder.dishId.setText("Numer: " + Long.toString(dish.getId()));
+        holder.dishName.setText("Nazwa: " + dish.getDishName());
+        holder.dishPrice.setText("Cena: " + Double.toString(dish.getDishPrice()) + " zł");
+        holder.dishPreparationTime.setText("Czas przygotowania: " + Long.toString(dish.getEstimatedPreparationTime()) + "min");
+        holder.dishCategoryName.setText("Kategoria: " + dish.getDishCategory().getCategoryName() + "\n");
     }
 
     @Override

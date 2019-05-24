@@ -5,67 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".activities.MainActivity">
+    android:padding="20dp"
+    tools:context=".activities.MainActivity"
+    android:textSize="30sp"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:background="@color/backgroundColor"
+    android:textColor="@color/buttonTextColor">
 
     <TextView
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="80dp"
-        android:textColor="#000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="CHOOSE YOUR ROLE:"/>
 
     <Button
         android:id="@+id/adminButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/adminButton"
-        android:textSize="20sp" />
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/adminButton" />
 
     <Button
         android:id="@+id/dieticianButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="@string/dieticianButton"
-        android:textSize="20sp" />
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/dieticianButton" />
 
     <Button
         android:id="@+id/customerButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="@string/buttonCustomerText"
-        android:textSize="20sp" />
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/buttonCustomerText" />
 
     <Button
         android:id="@+id/chefButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="@string/chefButtonText"
-        android:textSize="20sp" />
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/chefButtonText" />
 
     <Button
         android:id="@+id/waiterButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="@string/waiterButtonText"
-        android:textSize="20sp" />
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v4.widget.NestedScrollView>
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/waiterButtonText" />
 
 </LinearLayout>

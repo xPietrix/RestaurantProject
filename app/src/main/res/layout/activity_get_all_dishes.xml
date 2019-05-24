@@ -2,41 +2,39 @@
 
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@color/backgroundColor">
 
-<LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.GetAllDishesActivity">
-
-    <TextView
-        android:id="@+id/textViewGetAllDishes"
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/getAllDishesText"
-        android:textSize="24sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".activities.GetAllDishesActivity">
 
-    <Button
-        android:id="@+id/getDishesDishCategoryChooseButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CHOOSE DISH CATEGORY"
-        android:textSize="20sp" />
+        <Button
+            android:id="@+id/getDishesDishCategoryChooseButton"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@color/buttonColor"
+            android:textColor="@color/buttonTextColor"
+            android:text="CHOOSE CATEGORY" />
 
-    <TextView
-        android:id="@+id/textViewAllDishesList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""/>
+        <TextView
+            android:id="@+id/textViewAllDishesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/buttonTextColor"
+            android:text=""/>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v4.widget.NestedScrollView>
-
-</LinearLayout>
+    </LinearLayout>
 
 </ScrollView>

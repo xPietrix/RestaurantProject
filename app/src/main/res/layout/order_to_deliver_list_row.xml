@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/orderToDeliverId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"  />
+
+    <TextView
+        android:id="@+id/dishToDeliverId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/orderToDeliverId"/>
+
+    <TextView
+        android:id="@+id/dishFromOrderToDeliverName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishToDeliverId" />
+
+    <TextView
+        android:id="@+id/orderToDeliverPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishFromOrderToDeliverName" />
+
+    <TextView
+        android:id="@+id/tableNumberOfOrderToDeliver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/orderToDeliverPrice" />
+
+    <TextView
+        android:id="@+id/orderToDeliverDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/tableNumberOfOrderToDeliver" />
+
+    <TextView
+        android:id="@+id/orderToDeliverPrepTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/orderToDeliverDate" />
+
+</RelativeLayout>

@@ -3,6 +3,7 @@ package edu.pwap.pp.services;
 import edu.pwap.pp.clients.OrderApi;
 import edu.pwap.pp.models.Order;
 import edu.pwap.pp.repositories.OrderRepository;
+import io.reactivex.Single;
 
 public class OrderService
 {
@@ -23,18 +24,8 @@ public class OrderService
         this.orderRepository.deliverOrder(orderId, api);
     }
 
-    public void prepareOrder(long orderId, OrderApi api)
+    public Single<Order> prepareOrder(long orderId, OrderApi api)
     {
-        this.orderRepository.prepareOrder(orderId, api);
-    }
-
-    public void getOrdersToPrepare(OrderApi api)
-    {
-        this.orderRepository.getOrdersToPrepare(api);
-    }
-
-    public void getOrdersToDeliver(OrderApi api)
-    {
-        this.orderRepository.getOrdersToDeliver(api);
+        return this.orderRepository.prepareOrder(orderId, api);
     }
 }

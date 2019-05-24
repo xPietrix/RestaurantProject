@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/tableNumberOfOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/orderToPreparePrice"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/dishToPrepareId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderId"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/dishFromOrderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/dishToPrepareId"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/orderToPreparePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/dishFromOrderName"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/orderToPrepareDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/tableNumberOfOrder"
+        android:textColor="@color/buttonTextColor" />
+
+    <TextView
+        android:id="@+id/orderToPrepareTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/orderToPrepareDate"
+        android:textColor="@color/buttonTextColor" />
+
+</RelativeLayout>

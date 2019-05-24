@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:paddingTop="10dp"
+    android:background="@color/backgroundColor"
     tools:context=".activities.MakeDishOrder">
 
     <TextView
         android:id="@+id/tvTypeTableNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dimen_10"
-        android:fontFamily="sans-serif-medium"
-        android:lineSpacingExtra="8sp"
-        android:text="TYPE TABLE NUMBER: "
-        android:textSize="20dp"
-        android:textStyle="normal" />
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:text="TABLE NUMBER:" />
 
     <EditText
         android:id="@+id/editTextTableNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="200dp"
+        android:paddingBottom="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tVchooseDishCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvTypeTableNumber"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="@dimen/dimen_10"
-        android:fontFamily="sans-serif-medium"
-        android:lineSpacingExtra="8sp"
-        android:text="CHOOSE DISH CATEGORY: "
-        android:textSize="20dp"
-        android:textStyle="normal" />
 
     <Button
         android:id="@+id/dishCategoryChooseButton"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="Choose category"
-        android:textSize="20sp" />
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="Choose category" />
+
+    <Button
+        android:id="@+id/openMyOrderButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="MY ORDER" />
 
     <include layout="@layout/content_main" />
 

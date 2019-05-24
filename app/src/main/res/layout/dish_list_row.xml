@@ -4,59 +4,50 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
-    android:paddingBottom="@dimen/dimen_10"
-    android:paddingLeft="@dimen/activity_margin"
-    android:paddingRight="@dimen/activity_margin"
-    android:paddingTop="1dp">
+    android:paddingTop="10dp">
 
     <TextView
         android:id="@+id/dishIndex"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dot_height"
-        android:layout_marginRight="@dimen/dot_margin_right"
-        android:layout_marginTop="5dp"
-        android:includeFontPadding="false"
-        android:lineSpacingExtra="0dp"
-        android:textSize="@dimen/dot_text_size" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor" />
 
     <TextView
         android:id="@+id/dishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dishIndex"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishIndex" />
 
     <TextView
         android:id="@+id/dishPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dishName"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishName" />
 
     <TextView
         android:id="@+id/dishPreparationTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dishPrice"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishPrice" />
 
-    <!--<TextView
-        android:id="@+id/dishCategoryIndex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dishPreparationTime"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
--->
     <TextView
         android:id="@+id/dishCategoryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dishPreparationTime"
-        android:textColor="@color/note_list_text"
-        android:textSize="@dimen/note_list_text" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
+        android:layout_below="@id/dishPreparationTime" />
 
 </RelativeLayout>

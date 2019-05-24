@@ -1,105 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".activities.AddDishActivity"
     android:orientation="vertical"
-    tools:context=".activities.AddDishActivity">
-
-    <TextView
-        android:id="@+id/textViewAddingDish"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/addingNewDishText"
-        android:textSize="24sp" />
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/textViewDishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/dishNameTextView" />
 
     <EditText
         android:id="@+id/editTextDishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
+        android:paddingBottom="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/eTDishName" />
+
+    <Button
+        android:id="@+id/addDishDishCategoryChooseButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="Choose category" />
 
     <TextView
         android:id="@+id/textViewDishPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/dishPriceTV" />
 
     <EditText
         android:id="@+id/editTextDishPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="number|numberDecimal"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/eTDishPrice" />
 
     <TextView
         android:id="@+id/textViewEstimatedPrepTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/tVEstimatedPrepTime" />
 
     <EditText
         android:id="@+id/editTextEstimatedPrepTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="number"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="@string/eTEstimatedPrepTime" />
-<!--
-    <TextView
-        android:id="@+id/textViewDishCategoryId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tVDishCategoryId" />
-
-    <EditText
-        android:id="@+id/editTextDishCategoryId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/eTDishCategoryId" />
-
-    <TextView
-        android:id="@+id/textViewDishCategoryName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tVDishCategoryName" />
-
-    <EditText
-        android:id="@+id/editTextDishCategoryName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" /> -->
-
-    <Button
-        android:id="@+id/addDishDishCategoryChooseButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose category"
-        android:textSize="20sp" />
 
     <Button
         android:id="@+id/buttonAddDishToDB"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="@string/addDishToDBText"
-        android:textSize="20sp" />
+        android:layout_marginTop="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/addDishToDBText" />
 
 </LinearLayout>
-    </ScrollView>

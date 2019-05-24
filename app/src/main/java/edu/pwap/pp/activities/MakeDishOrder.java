@@ -1,7 +1,11 @@
 package edu.pwap.pp.activities;
 
+
+//region imports
+
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -26,7 +30,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +45,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.pwap.pp.R;
+import edu.pwap.pp.activities.utils.ClientOrder;
 import edu.pwap.pp.activities.utils.MyDividerItemDecoration;
 import edu.pwap.pp.activities.utils.RecyclerTouchListener;
 import edu.pwap.pp.clients.DishApi;
@@ -58,6 +62,8 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
+//endregion imports
+
 public class MakeDishOrder extends AppCompatActivity
 {
     private static final String TAG = "MakeDishOrder.java";
@@ -70,6 +76,7 @@ public class MakeDishOrder extends AppCompatActivity
     private static List <String> categoriesList = new ArrayList<String>();
     private AdapterView.OnItemClickListener onItemClickListener;
     private EditText eTTableNumber;
+    private List<Dish> dishesToOrder = new ArrayList<>();
 
     @BindView(R.id.linear_layout)
     public LinearLayout linearLayout;
@@ -80,6 +87,7 @@ public class MakeDishOrder extends AppCompatActivity
     @BindView(R.id.txt_empty_dishes_view)
     public TextView noDishesView;
 
+    private Button buttonClientOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -91,13 +99,29 @@ public class MakeDishOrder extends AppCompatActivity
 
         eTTableNumber = findViewById(R.id.editTextTableNumber);
         buttonShowDropDown = findViewById(R.id.dishCategoryChooseButton);
+
+        buttonClientOrder = findViewById(R.id.openMyOrderButton);
+        OnClickListener clientOrderHandler = getMyOrderButtonOnClickListener();
+        buttonClientOrder.setOnClickListener(clientOrderHandler);
         OnClickListener handler = getButtonOnClickListener();
         buttonShowDropDown.setOnClickListener(handler);
         dishesAdapter = new DishesAdapter(this, dishesList);
         configureRecycleView();
         addOnItemTouchListenerToRecycleView();
         onItemClickListener = getOnItemClickListener();
+
         getAllDishCategories();
+    }
+
+    private OnClickListener getMyOrderButtonOnClickListener()
+    {
+        return new OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                openClientOrderActivity();
+            }
+        };
     }
 
     private void configureRecycleView()
@@ -190,9 +214,9 @@ public class MakeDishOrder extends AppCompatActivity
                 String selectedItemText = ((TextView) v).getText().toString();
                 makeDishOrderActivity.buttonShowDropDown.setText(selectedItemText);
                 String selectedItemTag = v.getTag().toString();
-                Toast.makeText(mContext, "Dish Category ID is: " + selectedItemTag, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Dish Category ID is: " + selectedItemText, Toast.LENGTH_SHORT).show();
 
-                if(selectedItemTag != null)
+                if(selectedItemText != "CHOOSE CATEGORY")
                 {
                     getAllDishesWithCategory(selectedItemTag);
                 }
@@ -267,8 +291,13 @@ public class MakeDishOrder extends AppCompatActivity
     private void orderDish(Dish dish)
     {
         String date = "2019-12-10T11:21:37.999";
-        List<Dish> dishesToOrder = new ArrayList<>();
+
         dishesToOrder.add(dish);
+
+        /*****************************/
+        ClientOrder.addOrderToList(dish);
+        /******************************/
+
         int tableNumber = Integer.parseInt(eTTableNumber.getText().toString());
         Order order = new Order(0, dish.getDishPrice(), tableNumber, date,
                 dish.getEstimatedPreparationTime(), dishesToOrder);
@@ -279,6 +308,8 @@ public class MakeDishOrder extends AppCompatActivity
 
         Toast.makeText(MakeDishOrder.this,"Order made " + "(" + dish.getDishName() + " "
                 + dish.getDishPrice() + "zł )", Toast.LENGTH_SHORT).show();
+
+        dishesToOrder.clear();
     }
 
     private void showActionsDialog(final int position)
@@ -352,5 +383,12 @@ public class MakeDishOrder extends AppCompatActivity
         TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(Color.YELLOW);
         snackbar.show();
+    }
+
+    private void openClientOrderActivity()
+    {
+        Intent intent = new Intent(this, ClientOrderActivity.class);
+
+        startActivity(intent);
     }
 }

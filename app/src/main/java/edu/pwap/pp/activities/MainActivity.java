@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openOrdersToDeliverActivity();
+                openWaiterOrdersActivity();
             }
         });
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                openOrdersToPrepareActivity();
+                openChefOrdersActivity();
             }
         });
 
@@ -104,15 +104,15 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    private void openOrdersToPrepareActivity()
+    private void openChefOrdersActivity()
     {
-        Intent intent = new Intent(this, GetOrdersToPrepareActivity.class);
+        Intent intent = new Intent(this, ChefOrdersActivity.class);
         startActivity(intent);
     }
 
-    private void openOrdersToDeliverActivity()
+    private void openWaiterOrdersActivity()
     {
-        Intent intent = new Intent(this, GetOrdersToDeliverActivity.class);
+        Intent intent = new Intent(this, WaiterOrdersActivity.class);
         startActivity(intent);
     }
 }

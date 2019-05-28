@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.GetOrdersToDeliverActivity"
-    tools:showIn="@layout/activity_get_orders_to_deliver">
+    tools:showIn="@layout/activity_waiter_orders">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/to_deliver_orders_recycler_view"

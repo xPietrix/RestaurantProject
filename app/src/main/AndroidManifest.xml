@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.GetOrdersToDeliverActivity"></activity>
-        <activity android:name=".activities.GetOrdersToPrepareActivity" />
+        <activity android:name=".activities.WaiterOrdersActivity"></activity>
+        <activity android:name=".activities.ChefOrdersActivity" />
         <activity android:name=".activities.ClientOrderActivity" />
         <activity android:name=".activities.MakeDishOrder" />
         <activity android:name=".activities.GetCategoriesActivity" />

@@ -37,25 +37,11 @@ public class OrderRepository
                 });
     }
 
-    public void deliverOrder(long id, OrderApi api)
+    public Single<Order> deliverOrder(long id, OrderApi api)
     {
-        api.deliverOrder(id)
+        return api.deliverOrder(id)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new DisposableSingleObserver<Order>()
-                {
-                    @Override
-                    public void onSuccess(Order order)
-                    {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e)
-                    {
-                        Log.d("ERROR", "ERROR WITH DELIVER ORDER METHOD!");
-                    }
-                });
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     public Single<Order> prepareOrder(long id, final OrderApi api)

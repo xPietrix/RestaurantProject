@@ -19,9 +19,9 @@ public class OrderService
         this.orderRepository.addOrder(order, api);
     }
 
-    public void deliverOrder(long orderId, OrderApi api)
+    public Single<Order> deliverOrder(long orderId, OrderApi api)
     {
-        this.orderRepository.deliverOrder(orderId, api);
+        return this.orderRepository.deliverOrder(orderId, api);
     }
 
     public Single<Order> prepareOrder(long orderId, OrderApi api)

@@ -13,6 +13,9 @@ public class RetrofitInitializer
         // LTE //
     //private final static String BASE_URL = "http:/192.168.43.79:8080/";
 
+        // OTHER //
+    //private final static String BASE_URL = "";
+
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
